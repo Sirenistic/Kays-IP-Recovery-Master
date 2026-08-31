@@ -75,7 +75,7 @@
                     <div class="bulb"></div>
 
 
-                    <!-- VERTICAL SLIDER -->
+                    <!-- INVISIBLE VERTICAL SLIDER -->
 
                     <input
                         type="range"
@@ -224,6 +224,10 @@ const skillsCard =
     document.getElementById("skillsCard");
 
 
+/* =========================
+   SKILLS
+========================= */
+
 const skills = {
 
     0: [],
@@ -270,34 +274,83 @@ const skills = {
 };
 
 
+/* =========================
+   POINTER POSITIONS
+========================= */
+
+/*
+   These positions correspond directly
+   to the centre of each thermometer
+   segment.
+*/
+
+const pointerPositions = {
+
+    0: 75,
+
+    10: 120,
+
+    20: 165,
+
+    30: 211,
+
+    40: 256,
+
+    50: 302,
+
+    60: 347,
+
+    70: 393,
+
+    80: 438,
+
+    90: 484,
+
+    100: 529
+
+};
+
+
+/* =========================
+   UPDATE
+========================= */
+
 function update() {
 
     const value =
         Number(slider.value);
 
 
-    pointer.style.bottom =
-        `calc(${value}% + 70px)`;
+    /* MOVE TRIANGLE */
 
+    pointer.style.bottom =
+        pointerPositions[value] + "px";
+
+
+    /* CLEAR SKILLS */
 
     skillsList.innerHTML = "";
 
 
+    /* ADD SKILLS */
+
     skills[value].forEach(skill => {
 
-        const button =
+        const skillName =
             document.createElement("span");
 
-        button.className =
+        skillName.className =
             "skill-button";
 
-        button.textContent =
+        skillName.textContent =
             skill;
 
-        skillsList.appendChild(button);
+        skillsList.appendChild(skillName);
 
     });
 
+
+    /* CHANGE CARD COLOUR */
 
     skillsCard.className =
         "skills-card";
@@ -338,11 +391,15 @@ function update() {
 }
 
 
+/* SLIDER */
+
 slider.addEventListener(
     "input",
     update
 );
 
+
+/* INITIAL STATE */
 
 update();
 
