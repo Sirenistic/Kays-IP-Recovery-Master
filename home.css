@@ -3,27 +3,21 @@
     box-sizing: border-box;
 }
 
-html {
-    background: #11111a;
-}
+
+/* =========================================================
+   GENERAL
+========================================================= */
 
 body {
     margin: 0;
     min-height: 100vh;
 
     background:
-        radial-gradient(
-            circle at 50% 0%,
-            #292943 0%,
-            #11111a 55%
-        );
+        radial-gradient(circle at 50% 0%, #24243a 0%, #11111a 45%);
 
     color: white;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 
@@ -31,46 +25,53 @@ body {
    HOME PAGE
 ========================================================= */
 
-.home {
+.recovery-home {
     width: 100%;
     max-width: 850px;
+
     margin: 0 auto;
-    padding: 20px 20px 80px;
+
+    padding: 20px 20px 70px;
 }
 
 
 /* =========================================================
-   TOP — URGE?
+   URGE HERO
 ========================================================= */
 
-.hero {
-    min-height: 90vh;
+.recovery-hero {
+    min-height: 85vh;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
     text-align: center;
 }
 
-.hero h1 {
+
+.recovery-hero h1 {
     margin: 0;
 
     color: white;
 
-    font-size:
-        clamp(52px, 11vw, 100px);
+    font-size: clamp(55px, 11vw, 100px);
 
     font-weight: 900;
 
-    line-height: .86;
+    line-height: .84;
 
     letter-spacing: -5px;
+
+    text-shadow:
+        0 8px 30px rgba(0, 0, 0, .4);
 }
 
-.hero p {
-    margin: 25px 0 35px;
+
+.recovery-hero p {
+    margin: 28px 0 38px;
 
     color: #aaaabd;
 
@@ -82,23 +83,27 @@ body {
    YES / NO BUTTONS
 ========================================================= */
 
-.choice-buttons {
+.recovery-choice-buttons {
     width: 100%;
-    max-width: 520px;
+
+    max-width: 540px;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 18px;
 }
 
-.choice {
+
+.recovery-choice {
     width: 100%;
 
-    padding: 28px 20px;
+    padding: 30px 22px;
 
     border: none;
-    border-radius: 24px;
+
+    border-radius: 26px;
 
     color: white;
 
@@ -108,51 +113,72 @@ body {
 
     transition:
         transform .15s ease,
-        filter .15s ease;
+        filter .15s ease,
+        box-shadow .15s ease;
 }
 
-.choice:hover {
-    transform: translateY(-3px) scale(1.01);
 
-    filter: brightness(1.08);
-}
-
-.choice:active {
-    transform: scale(.97);
-}
-
-.choice-title {
+.recovery-choice strong {
     display: block;
 
-    font-size: 36px;
+    font-size: 38px;
 
     font-weight: 900;
+
+    letter-spacing: -1px;
 }
 
-.choice-description {
+
+.recovery-choice span {
     display: block;
 
-    margin-top: 7px;
+    margin-top: 8px;
 
     font-size: 15px;
 
     opacity: .9;
 }
 
-.yes {
-    background: #e83e5b;
 
-    box-shadow:
-        0 12px 35px
-        rgba(232, 62, 91, .25);
+.recovery-choice:hover {
+    transform: translateY(-4px) scale(1.015);
+
+    filter: brightness(1.08);
 }
 
-.no {
-    background: #4267e8;
+
+.recovery-choice:active {
+    transform: scale(.97);
+}
+
+
+/* YES */
+
+.recovery-yes {
+    background:
+        linear-gradient(
+            135deg,
+            #f04463,
+            #c92e52
+        );
 
     box-shadow:
-        0 12px 35px
-        rgba(66, 103, 232, .25);
+        0 15px 40px rgba(232, 62, 91, .25);
+}
+
+
+/* NO */
+
+.recovery-no {
+    background:
+        linear-gradient(
+            135deg,
+            #5178f0,
+            #3458d0
+        );
+
+    box-shadow:
+        0 15px 40px rgba(66, 103, 232, .25);
 }
 
 
@@ -160,33 +186,37 @@ body {
    GENERAL SECTIONS
 ========================================================= */
 
-.section {
+.recovery-section {
     width: 100%;
 
-    margin-top: 25px;
+    margin-top: 24px;
 
     padding: 28px;
 
-    background: #1a1a27;
+    border-radius: 26px;
 
-    border:
-        1px solid #29293a;
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d2b,
+            #181824
+        );
 
-    border-radius: 24px;
+    border: 1px solid #303044;
 
     box-shadow:
-        0 10px 35px
-        rgba(0, 0, 0, .18);
+        0 12px 35px rgba(0, 0, 0, .25);
 }
 
-.section h2 {
-    margin: 0;
 
+.recovery-section-title {
     color: white;
 
     font-size: 28px;
 
     font-weight: 900;
+
+    letter-spacing: -1px;
 }
 
 
@@ -194,7 +224,7 @@ body {
    TRIGGERS
 ========================================================= */
 
-.section-header {
+.recovery-section-header {
     width: 100%;
 
     padding: 0;
@@ -207,94 +237,190 @@ body {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
+
+    justify-content: space-between;
 
     font-family: Arial, sans-serif;
 
-    font-size: 27px;
+    font-size: 28px;
 
     font-weight: 900;
 
+    letter-spacing: -1px;
+
     cursor: pointer;
+
+    text-align: left;
 }
 
-.plus {
-    width: 38px;
-    height: 38px;
+
+.recovery-arrow {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #29293c;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    border-radius: 50%;
+    color: white;
 
-    background: #29293a;
+    font-size: 25px;
 
-    font-size: 23px;
+    font-weight: 400;
+
+    transition:
+        background .15s ease,
+        transform .15s ease;
 }
 
-.hidden {
+
+.recovery-section-header:hover .recovery-arrow {
+    background: #383850;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   EXPANDABLE TRIGGERS
+========================================================= */
+
+.recovery-expandable {
     display: none;
+
+    margin-top: 22px;
 }
 
 
-/* INTERNAL / EXTERNAL */
+.recovery-expandable.open {
+    display: block;
+}
 
-.trigger-header {
+
+.recovery-subheader {
     width: 100%;
 
-    margin-top: 15px;
+    margin-top: 10px;
 
-    padding: 18px 20px;
+    padding: 19px 20px;
 
     border: none;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
+
+    justify-content: space-between;
 
     font-family: Arial, sans-serif;
 
-    font-size: 16px;
+    font-size: 17px;
 
     font-weight: 900;
+
+    letter-spacing: .5px;
 
     color: #11111a;
 
     cursor: pointer;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease;
 }
 
-.internal {
-    background: #8b7cf6;
+
+.recovery-subheader:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.08);
 }
 
-.external {
-    background: #4267e8;
+
+.recovery-subheader span:last-child {
+    font-size: 23px;
 }
+
+
+/* INTERNAL */
+
+.internal-trigger {
+    background:
+        linear-gradient(
+            135deg,
+            #9b8df7,
+            #7567dc
+        );
+}
+
+
+/* EXTERNAL */
+
+.external-trigger {
+    background:
+        linear-gradient(
+            135deg,
+            #5178f0,
+            #3458d0
+        );
+}
+
+
+/* =========================================================
+   TRIGGER CONTENT
+========================================================= */
+
+.recovery-subcontent {
+    display: none;
+
+    padding: 5px 0 8px;
+}
+
+
+.recovery-subcontent.open {
+    display: block;
+}
+
 
 .trigger-item {
     margin-top: 8px;
 
-    padding: 15px 18px;
+    padding: 16px 18px;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
-    background: #242435;
+    background: #252538;
 
-    color: #d5d5e2;
+    border: 1px solid #32324a;
+
+    color: #d7d7e4;
 
     font-size: 14px;
 
-    line-height: 1.45;
+    line-height: 1.5;
 
     text-align: left;
+
+    transition:
+        background .15s ease,
+        transform .15s ease;
+}
+
+
+.trigger-item:hover {
+    background: #2b2b40;
+
+    transform: translateX(3px);
 }
 
 
@@ -302,30 +428,45 @@ body {
    4X
 ========================================================= */
 
-.block {
-    margin-top: 32px;
+.recovery-subsection {
+    margin-top: 34px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid #2b2b3d;
 }
 
-.block h3 {
-    margin:
-        0 0 15px;
+
+.recovery-subsection:first-of-type {
+    margin-top: 25px;
+
+    padding-top: 0;
+
+    border-top: none;
+}
+
+
+.recovery-subsection h2 {
+    margin: 0 0 15px;
 
     color: white;
 
-    font-size: 18px;
+    font-size: 19px;
 
     font-weight: 900;
+
+    letter-spacing: -.3px;
 }
 
-.description {
-    margin:
-        0 0 15px;
+
+.recovery-help-text {
+    margin: -5px 0 15px;
 
     color: #aaaabd;
 
     font-size: 14px;
 
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 
@@ -333,7 +474,7 @@ body {
    TEXT INPUTS
 ========================================================= */
 
-.inputs {
+.recovery-input-list {
     display: flex;
 
     flex-direction: column;
@@ -341,18 +482,17 @@ body {
     gap: 10px;
 }
 
-.inputs input {
+
+.recovery-input {
     width: 100%;
 
-    min-height: 54px;
+    min-height: 56px;
 
-    padding:
-        14px 17px;
+    padding: 15px 17px;
 
-    border:
-        2px solid #303044;
+    border: 2px solid #303044;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
     outline: none;
 
@@ -363,35 +503,55 @@ body {
     font-family: Arial, sans-serif;
 
     font-size: 16px;
+
+    transition:
+        border-color .15s ease,
+        box-shadow .15s ease,
+        background .15s ease;
 }
 
-.inputs input::placeholder {
-    color: #68687b;
+
+.recovery-input::placeholder {
+    color: #69697c;
 }
 
-.inputs input:focus {
-    border-color: #4267e8;
+
+.recovery-input:hover {
+    background: #151522;
+
+    border-color: #3b3b52;
+}
+
+
+.recovery-input:focus {
+    border-color: #5178f0;
+
+    background: #151522;
 
     box-shadow:
-        0 0 0 3px
-        rgba(66, 103, 232, .15);
+        0 0 0 4px rgba(81, 120, 240, .13);
 }
 
 
 /* =========================================================
-   CONTINGENCY PLAN
+   CONTINGENCY PLANS
 ========================================================= */
 
-.thermometer-button {
+.recovery-thermometer-link {
     width: 100%;
 
-    padding: 18px;
+    padding: 20px;
 
     border: none;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
-    background: #ff7043;
+    background:
+        linear-gradient(
+            135deg,
+            #ff875f,
+            #ed593d
+        );
 
     color: #11111a;
 
@@ -401,17 +561,43 @@ body {
 
     font-weight: 900;
 
+    letter-spacing: .3px;
+
     cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(255, 112, 67, .18);
 
     transition:
         transform .15s ease,
         filter .15s ease;
 }
 
-.thermometer-button:hover {
-    transform: translateY(-2px);
+
+.recovery-thermometer-link:hover {
+    transform: translateY(-3px);
 
     filter: brightness(1.08);
+}
+
+
+.recovery-thermometer-link:active {
+    transform: scale(.98);
+}
+
+
+/* =========================================================
+   FOUR WEEKS
+========================================================= */
+
+.recovery-four-weeks {
+    margin: 0;
+
+    color: #aaaabd;
+
+    font-size: 16px;
+
+    line-height: 1.5;
 }
 
 
@@ -421,29 +607,64 @@ body {
 
 @media (max-width: 600px) {
 
-    .home {
-        padding:
-            15px
-            15px
-            60px;
+    .recovery-home {
+        padding: 10px 14px 50px;
     }
 
-    .hero h1 {
-        font-size:
-            clamp(
-                48px,
-                14vw,
-                75px
-            );
 
-        letter-spacing: -3px;
+    .recovery-hero {
+        min-height: 82vh;
     }
 
-    .section {
-        padding: 21px;
 
-        border-radius: 20px;
+    .recovery-hero h1 {
+        font-size: clamp(48px, 16vw, 75px);
+
+        letter-spacing: -4px;
+    }
+
+
+    .recovery-hero p {
+        font-size: 16px;
+
+        margin: 22px 0 30px;
+    }
+
+
+    .recovery-choice {
+        padding: 27px 18px;
+    }
+
+
+    .recovery-choice strong {
+        font-size: 34px;
+    }
+
+
+    .recovery-section {
+        padding: 23px 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .recovery-section-header {
+        font-size: 24px;
+    }
+
+
+    .recovery-section-title {
+        font-size: 25px;
+    }
+
+
+    .recovery-subheader {
+        font-size: 16px;
+    }
+
+
+    .trigger-item {
+        font-size: 14px;
     }
 }
 ```
-
