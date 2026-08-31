@@ -32,7 +32,7 @@
             <div class="thermometer-container">
 
 
-                <!-- NUMBERS -->
+                <!-- NUMBERS LEFT OF THERMOMETER -->
 
                 <div class="thermometer-numbers">
 
@@ -75,7 +75,7 @@
                     <div class="bulb"></div>
 
 
-                    <!-- SLIDER -->
+                    <!-- EXISTING SLIDER -->
 
                     <input
                         type="range"
@@ -87,7 +87,7 @@
                     >
 
 
-                    <!-- POINTER -->
+                    <!-- CURRENT LEVEL POINTER -->
 
                     <div
                         class="pointer"
@@ -254,23 +254,16 @@ function update() {
 
     const value = Number(slider.value);
 
-
-    /*
-       The pointer sits directly
-       beside the selected segment.
-    */
-
-    const percentage = value / 100;
-
-    pointer.style.top =
-        `calc(${(1 - percentage) * 500}px + 30px)`;
+    pointer.style.bottom =
+        `calc(${value}% + 70px)`;
 
 
     skillsList.innerHTML =
         skills[value];
 
 
-    skillsCard.className = "skills-card";
+    skillsCard.className =
+        "skills-card";
 
 
     if (value <= 40) {
@@ -301,61 +294,6 @@ function update() {
 
 
 slider.addEventListener("input", update);
-
-
-/*
-   Allow dragging directly
-   on the pointer itself.
-*/
-
-let dragging = false;
-
-
-pointer.addEventListener("mousedown", () => {
-
-    dragging = true;
-
-});
-
-
-document.addEventListener("mouseup", () => {
-
-    dragging = false;
-
-});
-
-
-document.addEventListener("mousemove", (event) => {
-
-    if (!dragging) return;
-
-
-    const rect =
-        document.querySelector(".thermometer").getBoundingClientRect();
-
-
-    let position =
-        event.clientY - rect.top;
-
-
-    position =
-        Math.max(0, Math.min(550, position));
-
-
-    let value =
-        100 - ((position / 550) * 100);
-
-
-    value =
-        Math.round(value / 10) * 10;
-
-
-    slider.value = value;
-
-    update();
-
-});
-
 
 update();
 
