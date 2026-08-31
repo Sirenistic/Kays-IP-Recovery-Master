@@ -18,22 +18,21 @@
     <h1>HOW DISTRESSED ARE YOU?</h1>
 
     <p class="subtitle">
-        Move the thermometer to where you are right now.
+        Move the indicator to where you are right now.
     </p>
 
 
     <div class="thermometer-layout">
 
 
-        <!-- =========================
-             THERMOMETER
-        ========================== -->
+        <!-- THERMOMETER -->
 
         <section class="thermometer-area">
 
             <div class="thermometer-container">
 
-                <!-- NUMBERS LEFT OF THERMOMETER -->
+
+                <!-- NUMBERS -->
 
                 <div class="thermometer-numbers">
 
@@ -76,7 +75,7 @@
                     <div class="bulb"></div>
 
 
-                    <!-- DRAG CONTROL -->
+                    <!-- SLIDER -->
 
                     <input
                         type="range"
@@ -88,7 +87,7 @@
                     >
 
 
-                    <!-- CURRENT LEVEL POINTER -->
+                    <!-- POINTER -->
 
                     <div
                         class="pointer"
@@ -103,9 +102,7 @@
 
 
 
-        <!-- =========================
-             DEFINITIONS
-        ========================== -->
+        <!-- DEFINITIONS -->
 
         <section class="definitions">
 
@@ -179,12 +176,10 @@
 
 
 
-        <!-- =========================
-             SKILLS
-        ========================== -->
+        <!-- SKILLS -->
 
         <button
-            class="skills-card"
+            class="skills-card skill-blue"
             id="skillsCard"
             onclick="location.href='tools.html'"
         >
@@ -192,7 +187,6 @@
             <div class="skills-title">
                 SKILLS I CAN USE AT THIS LEVEL
             </div>
-
 
             <div
                 class="skills-list"
@@ -262,36 +256,24 @@ function update() {
 
 
     /*
-       Move pointer up and down
-       the thermometer.
+       The pointer sits directly
+       beside the selected segment.
     */
 
-    pointer.style.bottom =
-        `calc(${value}% + 70px)`;
+    const percentage = value / 100;
 
+    pointer.style.top =
+        `calc(${(1 - percentage) * 500}px + 30px)`;
 
-    /*
-       Change skills.
-    */
 
     skillsList.innerHTML =
         skills[value];
 
 
-    /*
-       Change skills card colour.
-    */
-
     skillsCard.className = "skills-card";
 
 
-    if (value <= 30) {
-
-        skillsCard.classList.add("skill-blue");
-
-    }
-
-    else if (value <= 40) {
+    if (value <= 40) {
 
         skillsCard.classList.add("skill-blue");
 
@@ -319,6 +301,61 @@ function update() {
 
 
 slider.addEventListener("input", update);
+
+
+/*
+   Allow dragging directly
+   on the pointer itself.
+*/
+
+let dragging = false;
+
+
+pointer.addEventListener("mousedown", () => {
+
+    dragging = true;
+
+});
+
+
+document.addEventListener("mouseup", () => {
+
+    dragging = false;
+
+});
+
+
+document.addEventListener("mousemove", (event) => {
+
+    if (!dragging) return;
+
+
+    const rect =
+        document.querySelector(".thermometer").getBoundingClientRect();
+
+
+    let position =
+        event.clientY - rect.top;
+
+
+    position =
+        Math.max(0, Math.min(550, position));
+
+
+    let value =
+        100 - ((position / 550) * 100);
+
+
+    value =
+        Math.round(value / 10) * 10;
+
+
+    slider.value = value;
+
+    update();
+
+});
+
 
 update();
 
