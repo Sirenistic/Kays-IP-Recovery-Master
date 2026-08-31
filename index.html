@@ -1,23 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Recovery Tool</title>
 
-    <link
-        rel="stylesheet"
-        href="home.css"
-    >
-
+    <link rel="stylesheet" href="home.css">
 </head>
 
 
@@ -26,36 +16,24 @@
 <main class="recovery-home">
 
 
-    <!-- =====================================================
-         URGE SECTION
-    ====================================================== -->
+    <!-- URGE SECTION -->
 
     <section class="recovery-hero">
 
-        <h1>
-            HAVING<br>
-            AN URGE?
-        </h1>
+        <h1>HAVING<br>AN URGE?</h1>
 
         <p>
             Take a moment. You have options.
         </p>
 
-
         <div class="recovery-choice-buttons">
-
 
             <button
                 class="recovery-choice recovery-yes"
                 onclick="location.href='urge.html'"
             >
-
                 <strong>YES</strong>
-
-                <span>
-                    I need help right now
-                </span>
-
+                <span>I need help right now</span>
             </button>
 
 
@@ -63,15 +41,9 @@
                 class="recovery-choice recovery-no"
                 onclick="location.href='resources.html'"
             >
-
                 <strong>NO</strong>
-
-                <span>
-                    Take me to my resources
-                </span>
-
+                <span>Take me to my resources</span>
             </button>
-
 
         </div>
 
@@ -79,18 +51,14 @@
 
 
 
-    <!-- =====================================================
-         TRIGGERS
-    ====================================================== -->
+    <!-- TRIGGERS -->
 
     <section class="recovery-section">
 
-
         <button
             class="recovery-section-header"
-            onclick="toggleSection('triggers', 'triggersArrow')"
+            onclick="toggleSection('triggers')"
         >
-
             <span>TRIGGERS</span>
 
             <span
@@ -113,13 +81,10 @@
 
             <button
                 class="recovery-subheader internal-trigger"
-                onclick="toggleSection('internal', 'internalArrow')"
+                onclick="toggleSection('internal')"
             >
-
                 <span>INTERNAL</span>
-
-                <span id="internalArrow">+</span>
-
+                <span>+</span>
             </button>
 
 
@@ -154,13 +119,10 @@
 
             <button
                 class="recovery-subheader external-trigger"
-                onclick="toggleSection('external', 'externalArrow')"
+                onclick="toggleSection('external')"
             >
-
                 <span>EXTERNAL</span>
-
-                <span id="externalArrow">+</span>
-
+                <span>+</span>
             </button>
 
 
@@ -192,19 +154,15 @@
 
             </div>
 
-
         </div>
 
     </section>
 
 
 
-    <!-- =====================================================
-         4X
-    ====================================================== -->
+    <!-- 4X -->
 
     <section class="recovery-section">
-
 
         <div class="recovery-section-title">
             4X
@@ -212,7 +170,7 @@
 
 
 
-        <!-- 1. ACCOUNTABILITY -->
+        <!-- ACCOUNTABILITY -->
 
         <div class="recovery-subsection">
 
@@ -220,30 +178,35 @@
                 1. ACCOUNTABILITY PARTNERS
             </h2>
 
+
             <div class="recovery-input-list">
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="1."
+                    data-save="accountability-1"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="2."
+                    data-save="accountability-2"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="3."
+                    data-save="accountability-3"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="4."
+                    data-save="accountability-4"
                 >
 
             </div>
@@ -252,7 +215,7 @@
 
 
 
-        <!-- 2. MOTIVATION -->
+        <!-- MOTIVATION -->
 
         <div class="recovery-subsection">
 
@@ -260,8 +223,9 @@
                 2. FOUR REASONS WHY
             </h2>
 
+
             <p class="recovery-help-text">
-                My four main reasons for changing this behaviour:
+                My reasons for changing this behaviour:
             </p>
 
 
@@ -271,24 +235,28 @@
                     class="recovery-input"
                     type="text"
                     placeholder="1."
+                    data-save="reason-1"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="2."
+                    data-save="reason-2"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="3."
+                    data-save="reason-3"
                 >
 
                 <input
                     class="recovery-input"
                     type="text"
                     placeholder="4."
+                    data-save="reason-4"
                 >
 
             </div>
@@ -297,7 +265,7 @@
 
 
 
-        <!-- 3. CONTINGENCY PLANS -->
+        <!-- CONTINGENCY PLANS -->
 
         <div class="recovery-subsection">
 
@@ -308,56 +276,54 @@
 
             <p class="recovery-help-text">
                 Four contingency plans that are positive and enjoyable
-                (even humorous) when craving comes.
+                when a craving comes. Refocus your attention for 14
+                minutes on something completely different.
             </p>
 
 
-            <p class="recovery-help-text">
-                This requires understanding what, where, and when the
-                triggers are.
-            </p>
+            <div class="recovery-help-text">
 
+                Specifically, something positive that engages as many
+                senses as possible (taste, touch, etc).
 
-            <p class="recovery-help-text">
-                Refocus attention for 14 minutes on something completely
-                different. Specifically, something positive that engages
-                as many senses as possible (taste, touch, etc.).
-            </p>
-
-
-            <p class="recovery-help-text">
-                For example:
-            </p>
-
-
-            <div class="trigger-item">
-                G.L.A.D
             </div>
 
 
             <div class="trigger-item">
-                Take 14 minutes thinking about someone else and a plan
-                of how you might surprise them in a way that would bring
-                a massive smile to their face. That is relative and
-                personal, and should have a real "wow" factor.
+
+                <strong>For example:</strong>
+
+                <br><br>
+
+                • G.L.A.D.
+
+                <br><br>
+
+                • Take 14 minutes thinking about someone else and a plan
+                for how you might surprise them in a way that would bring
+                a massive smile to their face — something personal with
+                a real "wow" factor.
+
+                <br><br>
+
+                • Drop Anchor, 5-5-5... 4-4-4... 3-3-3...
+                2-2-2... 1-1-1, S.T.O.P, T.I.P.P, Urge Surfing, etc.
+
             </div>
 
 
-            <div class="trigger-item">
-                Drop Anchor, 555...444...333...222...111... STOP,
-                TIPP, Urge Surfing, etc.
-            </div>
-
-
-            <div class="trigger-item">
-                My fourth contingency plan:
-            </div>
+            <button
+                class="recovery-thermometer-link"
+                onclick="location.href='urge.html'"
+            >
+                OPEN DISTRESS THERMOMETER
+            </button>
 
         </div>
 
 
 
-        <!-- 4. FOUR WEEKS -->
+        <!-- FOUR WEEKS -->
 
         <div class="recovery-subsection">
 
@@ -380,8 +346,8 @@
 
         </div>
 
-
     </section>
+
 
 
 </main>
@@ -390,29 +356,65 @@
 
 <script>
 
-function toggleSection(sectionId, arrowId) {
+/* =========================================================
+   COLLAPSIBLE SECTIONS
+========================================================= */
+
+function toggleSection(id) {
 
     const section =
-        document.getElementById(sectionId);
-
-    const arrow =
-        document.getElementById(arrowId);
-
+        document.getElementById(id);
 
     section.classList.toggle("open");
 
+}
 
-    if (section.classList.contains("open")) {
 
-        arrow.textContent = "−";
 
-    } else {
+/* =========================================================
+   SAVE TEXT BOXES
+========================================================= */
 
-        arrow.textContent = "+";
+const savedInputs =
+    document.querySelectorAll("[data-save]");
+
+
+savedInputs.forEach(input => {
+
+    const key =
+        "recovery-" + input.dataset.save;
+
+
+    /*
+       LOAD SAVED VALUE
+    */
+
+    const savedValue =
+        localStorage.getItem(key);
+
+
+    if (savedValue !== null) {
+
+        input.value =
+            savedValue;
 
     }
 
-}
+
+    /*
+       SAVE WHEN TYPING
+    */
+
+    input.addEventListener("input", function() {
+
+        localStorage.setItem(
+            key,
+            input.value
+        );
+
+    });
+
+});
 
 </script>
 
@@ -420,4 +422,3 @@ function toggleSection(sectionId, arrowId) {
 </body>
 
 </html>
-```
