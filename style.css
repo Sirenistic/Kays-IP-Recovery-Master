@@ -13,297 +13,6 @@ body {
 
 
 /* =========================================================
-   HOME PAGE
-========================================================= */
-
-.recovery-home {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 30px 20px 70px;
-}
-
-
-/* TOP URGE SECTION */
-
-.recovery-hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-.recovery-hero h1 {
-    margin: 0;
-    color: white;
-    font-size: clamp(48px, 10vw, 90px);
-    font-weight: 900;
-    line-height: .88;
-    letter-spacing: -4px;
-}
-
-
-.recovery-hero p {
-    margin: 25px 0 35px;
-    color: #aaaabd;
-    font-size: 18px;
-}
-
-
-.recovery-choice-buttons {
-    width: 100%;
-    max-width: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-
-.recovery-choice {
-    width: 100%;
-    padding: 28px 20px;
-    border: none;
-    border-radius: 24px;
-    color: white;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    transition: transform .15s ease, filter .15s ease;
-}
-
-
-.recovery-choice:hover {
-    transform: scale(1.03);
-    filter: brightness(1.08);
-}
-
-
-.recovery-choice:active {
-    transform: scale(.97);
-}
-
-
-.recovery-choice strong {
-    display: block;
-    font-size: 34px;
-    font-weight: 900;
-}
-
-
-.recovery-choice span {
-    display: block;
-    margin-top: 7px;
-    font-size: 15px;
-}
-
-
-.recovery-yes {
-    background: #e83e5b;
-    box-shadow: 0 12px 35px rgba(232, 62, 91, .25);
-}
-
-
-.recovery-no {
-    background: #4267e8;
-    box-shadow: 0 12px 35px rgba(66, 103, 232, .25);
-}
-
-
-/* HOME SECTIONS */
-
-.recovery-section {
-    width: 100%;
-    margin-top: 25px;
-    padding: 27px;
-    border-radius: 24px;
-    background: #1a1a27;
-    border: 1px solid #29293a;
-}
-
-
-.recovery-section-title {
-    color: white;
-    font-size: 26px;
-    font-weight: 900;
-}
-
-
-/* TRIGGERS */
-
-.recovery-section-header {
-    width: 100%;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, sans-serif;
-    font-size: 26px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-.recovery-arrow {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #29293a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 23px;
-}
-
-
-.recovery-expandable {
-    display: none;
-    margin-top: 20px;
-}
-
-
-.recovery-expandable.open {
-    display: block;
-}
-
-
-.recovery-subheader {
-    width: 100%;
-    margin-top: 10px;
-    padding: 18px 20px;
-    border: none;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 900;
-    color: #11111a;
-    cursor: pointer;
-}
-
-
-.internal-trigger {
-    background: #8b7cf6;
-}
-
-
-.external-trigger {
-    background: #4267e8;
-}
-
-
-.recovery-subcontent {
-    display: none;
-}
-
-
-.recovery-subcontent.open {
-    display: block;
-}
-
-
-.trigger-item {
-    margin-top: 8px;
-    padding: 15px 18px;
-    border-radius: 14px;
-    background: #242435;
-    color: #d5d5e2;
-    font-size: 14px;
-    line-height: 1.45;
-    text-align: left;
-}
-
-
-/* 4X SECTIONS */
-
-.recovery-subsection {
-    margin-top: 32px;
-}
-
-
-.recovery-subsection h2 {
-    margin: 0 0 15px;
-    color: white;
-    font-size: 18px;
-    font-weight: 900;
-}
-
-
-.recovery-help-text {
-    margin: -5px 0 15px;
-    color: #aaaabd;
-    font-size: 14px;
-}
-
-
-.recovery-input-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.recovery-input {
-    width: 100%;
-    min-height: 54px;
-    padding: 14px 17px;
-    border: 2px solid #303044;
-    border-radius: 14px;
-    outline: none;
-    background: #11111a;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-
-.recovery-input::placeholder {
-    color: #68687b;
-}
-
-
-.recovery-input:focus {
-    border-color: #4267e8;
-    box-shadow: 0 0 0 3px rgba(66, 103, 232, .15);
-}
-
-
-/* CONTINGENCY PLANS */
-
-.recovery-thermometer-link {
-    width: 100%;
-    padding: 18px;
-    border: none;
-    border-radius: 16px;
-    background: #ff7043;
-    color: #11111a;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-.recovery-thermometer-link:hover {
-    filter: brightness(1.08);
-}
-
-
-.recovery-four-weeks {
-    margin: 0;
-    color: #aaaabd;
-    font-size: 16px;
-}
-
-
-/* =========================================================
    THERMOMETER PAGE
 ========================================================= */
 
@@ -313,13 +22,11 @@ body {
     text-align: center;
 }
 
-
 .urge-page h1 {
     margin: 0;
     font-size: clamp(38px, 6vw, 65px);
     line-height: 1;
 }
-
 
 .subtitle {
     margin: 15px 0 35px;
@@ -328,7 +35,9 @@ body {
 }
 
 
-/* LAYOUT */
+/* =========================================================
+   LAYOUT
+========================================================= */
 
 .thermometer-layout {
     width: 100%;
@@ -348,7 +57,9 @@ body {
 }
 
 
-/* THERMOMETER AREA */
+/* =========================================================
+   THERMOMETER AREA
+========================================================= */
 
 .thermometer-area {
     height: 620px;
@@ -360,7 +71,6 @@ body {
     justify-content: center;
 }
 
-
 .thermometer-container {
     position: relative;
 
@@ -370,7 +80,9 @@ body {
 }
 
 
-/* NUMBERS */
+/* =========================================================
+   NUMBERS
+========================================================= */
 
 .thermometer-numbers {
     position: absolute;
@@ -399,7 +111,9 @@ body {
 }
 
 
-/* THERMOMETER */
+/* =========================================================
+   THERMOMETER
+========================================================= */
 
 .thermometer {
     position: absolute;
@@ -414,7 +128,9 @@ body {
 }
 
 
-/* TUBE */
+/* =========================================================
+   TUBE
+========================================================= */
 
 .tube {
     position: absolute;
@@ -439,7 +155,6 @@ body {
         0 8px 25px rgba(0,0,0,.35);
 }
 
-
 .segment {
     width: 100%;
 
@@ -450,7 +165,9 @@ body {
 }
 
 
-/* COLOURS */
+/* =========================================================
+   COLOURS
+========================================================= */
 
 .s100 {
     background: #e53935;
@@ -494,11 +211,14 @@ body {
 
 .s0 {
     background: #f4fff4;
+
     border-bottom: none;
 }
 
 
-/* BULB */
+/* =========================================================
+   BULB
+========================================================= */
 
 .bulb {
     position: absolute;
@@ -522,7 +242,6 @@ body {
         0 8px 25px rgba(0,0,0,.35);
 }
 
-
 .bulb::before {
     content: "";
 
@@ -542,7 +261,9 @@ body {
 }
 
 
-/* SLIDER */
+/* =========================================================
+   SLIDER
+========================================================= */
 
 #slider {
     position: absolute;
@@ -571,7 +292,9 @@ body {
 }
 
 
-/* TRIANGLE */
+/* =========================================================
+   TRIANGLE
+========================================================= */
 
 .pointer {
     position: absolute;
@@ -603,7 +326,9 @@ body {
 }
 
 
-/* DEFINITIONS */
+/* =========================================================
+   DEFINITIONS
+========================================================= */
 
 .definitions {
     height: 500px;
@@ -616,7 +341,6 @@ body {
 
     text-align: left;
 }
-
 
 .definition {
     display: flex;
@@ -635,7 +359,9 @@ body {
 }
 
 
-/* NUMBER CIRCLES */
+/* =========================================================
+   NUMBER CIRCLES
+========================================================= */
 
 .definition strong {
     flex: 0 0 38px;
@@ -660,7 +386,9 @@ body {
 }
 
 
-/* MATCH COLOURS */
+/* =========================================================
+   MATCH COLOURS
+========================================================= */
 
 .level-100 strong {
     background: #e53935;
@@ -707,7 +435,9 @@ body {
 }
 
 
-/* SKILLS CARD */
+/* =========================================================
+   SKILLS CARD
+========================================================= */
 
 .skills-card {
     width: 100%;
@@ -735,7 +465,6 @@ body {
     cursor: pointer;
 }
 
-
 .skills-title {
     font-size: 11px;
 
@@ -745,7 +474,6 @@ body {
 
     margin-bottom: 22px;
 }
-
 
 .skills-list {
     width: 100%;
@@ -758,7 +486,6 @@ body {
 
     gap: 10px;
 }
-
 
 .skill-button {
     width: 90%;
@@ -787,7 +514,9 @@ body {
 }
 
 
-/* SKILL CARD COLOURS */
+/* =========================================================
+   SKILL CARD COLOURS
+========================================================= */
 
 .skill-blue {
     background: #64b5f6;
@@ -806,7 +535,9 @@ body {
 }
 
 
-/* BACK */
+/* =========================================================
+   BACK
+========================================================= */
 
 .back-button {
     margin-top: 25px;
@@ -821,16 +552,20 @@ body {
 }
 
 
-/* TABLET */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media (max-width: 950px) {
 
     .thermometer-layout {
+
         grid-template-columns:
             200px 1fr;
     }
 
     .skills-card {
+
         grid-column: 1 / -1;
 
         max-width: 350px;
@@ -840,17 +575,21 @@ body {
 }
 
 
-/* PHONE */
+/* =========================================================
+   PHONE
+========================================================= */
 
 @media (max-width: 600px) {
 
     .thermometer-layout {
+
         display: flex;
 
         flex-direction: column;
     }
 
     .definitions {
+
         width: 100%;
 
         height: auto;
@@ -859,17 +598,8 @@ body {
     }
 
     .skills-card {
+
         width: 100%;
     }
-
-    .recovery-home {
-        padding: 15px;
-    }
-
-    .recovery-section {
-        padding: 21px;
-        border-radius: 20px;
-    }
-
 }
 ```
