@@ -670,6 +670,329 @@ body {
 
         width: 100%;
     }
+```css
+/* ==================================================
+   RECOVERY HOME PAGE
+   These styles are intentionally isolated from
+   the thermometer page.
+================================================== */
+
+.recovery-home {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px 70px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.recovery-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.recovery-hero h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(48px, 11vw, 90px);
+    line-height: .88;
+    letter-spacing: -4px;
+}
+
+
+.recovery-hero p {
+    margin: 25px 0 35px;
+    color: #aaaabd;
+    font-size: 18px;
+}
+
+
+.recovery-choice-buttons {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.recovery-choice {
+    width: 100%;
+    border: none;
+    border-radius: 24px;
+    padding: 27px 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+}
+
+
+.recovery-choice:hover {
+    transform: scale(1.025);
+    filter: brightness(1.08);
+}
+
+
+.recovery-choice:active {
+    transform: scale(.98);
+}
+
+
+.recovery-choice strong {
+    display: block;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+
+.recovery-choice span {
+    display: block;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+
+.recovery-yes {
+    background: #e53935;
+    box-shadow: 0 12px 35px rgba(229,57,53,.2);
+}
+
+
+.recovery-no {
+    background: #4267e8;
+    box-shadow: 0 12px 35px rgba(66,103,232,.2);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.recovery-section {
+    margin-top: 25px;
+    padding: 25px;
+    background: #1a1a27;
+    border: 1px solid #29293a;
+    border-radius: 24px;
+}
+
+
+.recovery-section-title {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+
+.recovery-section-header {
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.recovery-arrow {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #29293a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+
+/* =========================
+   TRIGGERS
+========================= */
+
+.recovery-expandable {
+    display: none;
+    margin-top: 20px;
+}
+
+
+.recovery-expandable.open {
+    display: block;
+}
+
+
+.recovery-subheader {
+    width: 100%;
+    margin-top: 10px;
+    padding: 17px 20px;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #11111a;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.internal-trigger {
+    background: #7c6ff2;
+}
+
+
+.external-trigger {
+    background: #4267e8;
+}
+
+
+.recovery-subcontent {
+    display: none;
+}
+
+
+.recovery-subcontent.open {
+    display: block;
+}
+
+
+.trigger-item {
+    margin-top: 8px;
+    padding: 14px 17px;
+    border-radius: 13px;
+    background: #242435;
+    color: #d5d5e2;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+}
+
+
+/* =========================
+   FOUR X
+========================= */
+
+.recovery-subsection {
+    margin-top: 30px;
+}
+
+
+.recovery-subsection h2 {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.recovery-help-text {
+    margin: -5px 0 15px;
+    color: #aaaabd;
+    font-size: 14px;
+}
+
+
+.recovery-input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.recovery-input {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 17px;
+    border: 2px solid #303044;
+    border-radius: 13px;
+    outline: none;
+    background: #11111a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.recovery-input::placeholder {
+    color: #68687b;
+}
+
+
+.recovery-input:focus {
+    border-color: #4267e8;
+    box-shadow: 0 0 0 3px rgba(66,103,232,.15);
+}
+
+
+/* =========================
+   THERMOMETER LINK
+========================= */
+
+.recovery-thermometer-link {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 15px;
+    background: #ff7043;
+    color: #11111a;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+}
+
+
+.recovery-thermometer-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+
+.recovery-four-weeks {
+    margin: 0;
+    color: #aaaabd;
+    font-size: 16px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .recovery-home {
+        padding: 15px 15px 50px;
+    }
+
+    .recovery-section {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .recovery-hero {
+        min-height: 85vh;
+    }
+
+}
+```
 
 }
 ```
