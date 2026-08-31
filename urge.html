@@ -25,14 +25,16 @@
     <div class="thermometer-layout">
 
 
-        <!-- THERMOMETER -->
+        <!-- =========================
+             THERMOMETER
+        ========================== -->
 
         <section class="thermometer-area">
 
             <div class="thermometer-container">
 
 
-                <!-- NUMBERS LEFT OF THERMOMETER -->
+                <!-- NUMBERS -->
 
                 <div class="thermometer-numbers">
 
@@ -87,7 +89,7 @@
                     >
 
 
-                    <!-- CURRENT LEVEL POINTER -->
+                    <!-- INDICATOR -->
 
                     <div
                         class="pointer"
@@ -102,7 +104,9 @@
 
 
 
-        <!-- DEFINITIONS -->
+        <!-- =========================
+             DEFINITIONS
+        ========================== -->
 
         <section class="definitions">
 
@@ -176,30 +180,32 @@
 
 
 
-        <!-- SKILLS -->
+        <!-- =========================
+             SKILLS
+        ========================== -->
 
-        <button
+        <div
             class="skills-card skill-blue"
             id="skillsCard"
-            onclick="location.href='tools.html'"
         >
 
             <div class="skills-title">
                 SKILLS I CAN USE AT THIS LEVEL
             </div>
 
+
             <div
                 class="skills-list"
                 id="skillsList"
-            >
-                Observe<br>
-                Full Participation
-            </div>
+            ></div>
 
-        </button>
+        </div>
 
     </div>
 
+
+
+    <!-- BACK -->
 
     <button
         class="back-button"
@@ -214,91 +220,162 @@
 
 <script>
 
-const slider = document.getElementById("slider");
+/* =========================
+   ELEMENTS
+========================= */
 
-const pointer = document.getElementById("pointer");
+const slider =
+    document.getElementById("slider");
 
-const skillsList = document.getElementById("skillsList");
+const pointer =
+    document.getElementById("pointer");
 
-const skillsCard = document.getElementById("skillsCard");
+const skillsList =
+    document.getElementById("skillsList");
+
+const skillsCard =
+    document.getElementById("skillsCard");
 
 
 /* =========================
-   SKILLS FOR EACH LEVEL
+   SKILLS
 ========================= */
 
 const skills = {
 
-    0: "No skill needed",
+    0: [],
 
-    10: "No skill needed",
+    10: [],
 
-    20: "No skill needed",
+    20: [],
 
-    30: "No skill needed",
+    30: [],
 
-    40: "Observe<br>Full Participation",
 
-    50: "G.L.A.D<br>Urge Surfing",
+    40: [
 
-    60: "Breathing Exercise<br>Thought Log",
+        ["Observe", "observe.html"],
 
-    70: "Notice, Name, Make Room",
+        ["Full Participation", "full-participation.html"]
 
-    80: "Drop Anchor<br>LIKE<br>ACE",
+    ],
 
-    90: "S.T.O.P<br>5-5-5",
 
-    100: "T.I.P.P"
+    50: [
+
+        ["G.L.A.D", "glad.html"],
+
+        ["Urge Surfing", "urge-surfing.html"]
+
+    ],
+
+
+    60: [
+
+        ["Breathing Exercise", "breathing.html"],
+
+        ["Thought Log", "thought-log.html"]
+
+    ],
+
+
+    70: [
+
+        ["Notice, Name, Make Room", "notice-name-make-room.html"]
+
+    ],
+
+
+    80: [
+
+        ["Drop Anchor", "drop-anchor.html"],
+
+        ["ACE", "ace.html"]
+
+    ],
+
+
+    90: [
+
+        ["S.T.O.P", "stop.html"],
+
+        ["5-5-5", "five-five-five.html"]
+
+    ],
+
+
+    100: [
+
+        ["T.I.P.P", "tipp.html"]
+
+    ]
 
 };
 
 
 /* =========================
-   UPDATE EVERYTHING
+   UPDATE
 ========================= */
 
 function update() {
 
-    const value = Number(slider.value);
+    const value =
+        Number(slider.value);
 
 
     /*
-       THERMOMETER MAPPING
 
-       The coloured tube starts at 30px
-       and is exactly 500px tall.
+       IMPORTANT:
+       This is the same pointer
+       positioning that was working.
 
-       0   = bottom
-       100 = top
     */
 
-    const pointerPosition =
-        (value / 100) * 500;
+    pointer.style.bottom =
+        `calc(${value}% + 70px)`;
 
 
-    /*
-       Position pointer so that
-       each value lines up with
-       its corresponding thermometer
-       segment.
-    */
+    /* =====================
+       CLEAR SKILLS
+    ===================== */
 
-    pointer.style.top =
-        `${530 - pointerPosition}px`;
+    skillsList.innerHTML = "";
 
 
-    /*
-       Update skills
-    */
+    /* =====================
+       CREATE SKILL BUTTONS
+    ===================== */
 
-    skillsList.innerHTML =
-        skills[value];
+    skills[value].forEach(skill => {
+
+        const button =
+            document.createElement("button");
 
 
-    /*
-       Update skills colour
-    */
+        button.className =
+            "skill-button";
+
+
+        button.textContent =
+            skill[0];
+
+
+        button.onclick = function() {
+
+            location.href =
+                skill[1];
+
+        };
+
+
+        skillsList.appendChild(button);
+
+    });
+
+
+    /* =====================
+       SKILL CARD COLOUR
+    ===================== */
 
     skillsCard.className =
         "skills-card";
@@ -306,25 +383,33 @@ function update() {
 
     if (value <= 40) {
 
-        skillsCard.classList.add("skill-blue");
+        skillsCard.classList.add(
+            "skill-blue"
+        );
 
     }
 
     else if (value <= 60) {
 
-        skillsCard.classList.add("skill-yellow");
+        skillsCard.classList.add(
+            "skill-yellow"
+        );
 
     }
 
     else if (value <= 80) {
 
-        skillsCard.classList.add("skill-orange");
+        skillsCard.classList.add(
+            "skill-orange"
+        );
 
     }
 
     else {
 
-        skillsCard.classList.add("skill-red");
+        skillsCard.classList.add(
+            "skill-red"
+        );
 
     }
 
@@ -341,7 +426,9 @@ slider.addEventListener(
 );
 
 
-/* INITIAL POSITION */
+/* =========================
+   INITIAL LOAD
+========================= */
 
 update();
 
