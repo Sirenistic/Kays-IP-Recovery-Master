@@ -75,7 +75,7 @@
                     <div class="bulb"></div>
 
 
-                    <!-- EXISTING SLIDER -->
+                    <!-- SLIDER -->
 
                     <input
                         type="range"
@@ -223,6 +223,10 @@ const skillsList = document.getElementById("skillsList");
 const skillsCard = document.getElementById("skillsCard");
 
 
+/* =========================
+   SKILLS FOR EACH LEVEL
+========================= */
+
 const skills = {
 
     0: "No skill needed",
@@ -250,17 +254,51 @@ const skills = {
 };
 
 
+/* =========================
+   UPDATE EVERYTHING
+========================= */
+
 function update() {
 
     const value = Number(slider.value);
 
-    pointer.style.bottom =
-        `calc(${value}% + 70px)`;
 
+    /*
+       THERMOMETER MAPPING
+
+       The coloured tube starts at 30px
+       and is exactly 500px tall.
+
+       0   = bottom
+       100 = top
+    */
+
+    const pointerPosition =
+        (value / 100) * 500;
+
+
+    /*
+       Position pointer so that
+       each value lines up with
+       its corresponding thermometer
+       segment.
+    */
+
+    pointer.style.top =
+        `${530 - pointerPosition}px`;
+
+
+    /*
+       Update skills
+    */
 
     skillsList.innerHTML =
         skills[value];
 
+
+    /*
+       Update skills colour
+    */
 
     skillsCard.className =
         "skills-card";
@@ -293,7 +331,17 @@ function update() {
 }
 
 
-slider.addEventListener("input", update);
+/* =========================
+   SLIDER
+========================= */
+
+slider.addEventListener(
+    "input",
+    update
+);
+
+
+/* INITIAL POSITION */
 
 update();
 
