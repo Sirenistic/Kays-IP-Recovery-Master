@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urge Check-In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="urge-page">
+
+        <div class="icon">🔥</div>
+
+        <h1>HOW STRONG<br>IS THE URGE?</h1>
+
+        <p class="subtitle">
+            You don't have to act on it.
+        </p>
+
+        <div class="urge-number" id="urgeNumber">5</div>
+
+        <input
+            type="range"
+            min="1"
+            max="10"
+            value="5"
+            class="slider"
+            id="urgeSlider"
+        >
+
+        <div class="slider-labels">
+            <span>1</span>
+            <span>10</span>
+        </div>
+
+        <p class="urge-message" id="urgeMessage">
+            It's there, but you have room to choose.
+        </p>
+
+        <button class="continue-button" onclick="location.href='tools.html'">
+            SHOW ME WHAT TO DO →
+        </button>
+
+        <button class="back-button" onclick="location.href='index.html'">
+            ← BACK
+        </button>
+
+    </main>
+
+    <script>
+        const slider = document.getElementById("urgeSlider");
+        const number = document.getElementById("urgeNumber");
+        const message = document.getElementById("urgeMessage");
+
+        slider.addEventListener("input", function() {
+
+            number.textContent = this.value;
+
+            if (this.value <= 3) {
+                message.textContent = "It's there, but you have plenty of room to choose.";
+            } 
+            else if (this.value <= 6) {
+                message.textContent = "The urge is noticeable. Let's give you some space from it.";
+            } 
+            else if (this.value <= 8) {
+                message.textContent = "Strong urge. Let's interrupt the cycle before it takes over.";
+            } 
+            else {
+                message.textContent = "Very strong urge. Don't fight it alone — let's get you through the next few minutes.";
+            }
+        });
+    </script>
+
+</body>
+</html>
