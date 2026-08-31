@@ -11,32 +11,58 @@
 
     <main class="urge-page">
 
-        <div class="icon">🔥</div>
+        <div class="icon">🌡️</div>
 
         <h1>HOW STRONG<br>IS THE URGE?</h1>
 
         <p class="subtitle">
-            You don't have to act on it.
+            Drag the thermometer.
         </p>
 
-        <div class="urge-number" id="urgeNumber">5</div>
+        <div class="thermometer-area">
 
-        <input
-            type="range"
-            min="1"
-            max="10"
-            value="5"
-            class="slider"
-            id="urgeSlider"
-        >
+            <div class="thermometer">
 
-        <div class="slider-labels">
-            <span>1</span>
-            <span>10</span>
+                <div class="thermometer-tube">
+                    <div class="thermometer-fill" id="thermometerFill"></div>
+
+                    <div class="thermometer-scale">
+                        <span>10</span>
+                        <span>9</span>
+                        <span>8</span>
+                        <span>7</span>
+                        <span>6</span>
+                        <span>5</span>
+                        <span>4</span>
+                        <span>3</span>
+                        <span>2</span>
+                        <span>1</span>
+                    </div>
+
+                    <input
+                        type="range"
+                        min="1"
+                        max="10"
+                        value="5"
+                        class="vertical-slider"
+                        id="urgeSlider"
+                    >
+
+                </div>
+
+                <div class="thermometer-bulb"></div>
+
+            </div>
+
+            <div class="urge-reading">
+                <div class="urge-number" id="urgeNumber">5</div>
+                <div class="urge-out-of">/ 10</div>
+            </div>
+
         </div>
 
         <p class="urge-message" id="urgeMessage">
-            It's there, but you have room to choose.
+            The urge is noticeable. Let's give you some space from it.
         </p>
 
         <button class="continue-button" onclick="location.href='tools.html'">
@@ -50,27 +76,49 @@
     </main>
 
     <script>
+
         const slider = document.getElementById("urgeSlider");
         const number = document.getElementById("urgeNumber");
         const message = document.getElementById("urgeMessage");
+        const fill = document.getElementById("thermometerFill");
 
-        slider.addEventListener("input", function() {
+        function updateThermometer() {
 
-            number.textContent = this.value;
+            const value = Number(slider.value);
 
-            if (this.value <= 3) {
-                message.textContent = "It's there, but you have plenty of room to choose.";
-            } 
-            else if (this.value <= 6) {
-                message.textContent = "The urge is noticeable. Let's give you some space from it.";
-            } 
-            else if (this.value <= 8) {
-                message.textContent = "Strong urge. Let's interrupt the cycle before it takes over.";
-            } 
-            else {
-                message.textContent = "Very strong urge. Don't fight it alone — let's get you through the next few minutes.";
+            number.textContent = value;
+
+            const percentage = ((value - 1) / 9) * 100;
+
+            fill.style.height = percentage + "%";
+
+            if (value <= 3) {
+
+                message.textContent =
+                    "It's there, but you have plenty of room to choose.";
+
+            } else if (value <= 6) {
+
+                message.textContent =
+                    "The urge is noticeable. Let's give you some space from it.";
+
+            } else if (value <= 8) {
+
+                message.textContent =
+                    "Strong urge. Let's interrupt the cycle before it takes over.";
+
+            } else {
+
+                message.textContent =
+                    "Very strong urge. Let's get you through the next few minutes.";
+
             }
-        });
+        }
+
+        slider.addEventListener("input", updateThermometer);
+
+        updateThermometer();
+
     </script>
 
 </body>
