@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>G.L.A.D. Technique</title>
+
+    <link rel="stylesheet" href="glad.css">
+</head>
+
+<body>
+
+<main class="glad-page">
+
+    <!-- HEADER -->
+
+    <section class="glad-header">
+
+        <h1>G.L.A.D.</h1>
+
+        <p class="glad-subtitle">
+            Four ways of finding joy and balance.
+        </p>
+
+        <p class="glad-intro">
+            G.L.A.D. works by paying attention to positive aspects of life
+            that are around you all the time, but which frequently go unnoticed.
+        </p>
+
+    </section>
+
+
+    <!-- TIMER -->
+
+    <section class="glad-timer-card">
+
+        <div class="timer-label">
+            TAKE 14 MINUTES
+        </div>
+
+        <div
+            class="timer"
+            id="timer"
+        >
+            14:00
+        </div>
+
+        <div class="timer-buttons">
+
+            <button
+                class="timer-start"
+                id="timerStart"
+            >
+                START
+            </button>
+
+            <button
+                class="timer-reset"
+                id="timerReset"
+            >
+                RESET
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- GRATITUDE -->
+
+    <section class="glad-section gratitude">
+
+        <div class="letter">
+            G
+        </div>
+
+        <div class="section-content">
+
+            <h2>Gratitude</h2>
+
+            <p class="question">
+                One thing you are grateful for today.
+            </p>
+
+            <p class="instruction">
+                Be as specific as possible. Don't just name the thing —
+                think about what it is about that thing that you appreciate.
+            </p>
+
+            <textarea
+                id="gratitude"
+                placeholder="Today I am grateful for..."
+            ></textarea>
+
+            <button
+                class="details-button"
+                onclick="toggleDetails('gratitudeDetails')"
+            >
+                EXAMPLES AND GUIDANCE
+            </button>
+
+            <div
+                class="details"
+                id="gratitudeDetails"
+            >
+
+                <p>
+                    Gratitude can be something basic, such as having food
+                    and water, sunlight, a body that works well enough,
+                    or a roof over your head.
+                </p>
+
+                <p>
+                    It can also be something significant, such as a devoted
+                    relationship, meaningful work, a caring community of
+                    friends, or robust health.
+                </p>
+
+                <p>
+                    Try not to repeat the same item twice. It doesn't need
+                    to be a big thing — it just needs to be something you
+                    genuinely reflect on.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEARNING -->
+
+    <section class="glad-section learning">
+
+        <div class="letter">
+            L
+        </div>
+
+        <div class="section-content">
+
+            <h2>Learning</h2>
+
+            <p class="question">
+                One new thing you learned today.
+            </p>
+
+            <p class="instruction">
+                Stay curious. Look for something new about yourself,
+                another person, or the world around you.
+            </p>
+
+            <textarea
+                id="learning"
+                placeholder="Today I learned..."
+            ></textarea>
+
+            <button
+                class="details-button"
+                onclick="toggleDetails('learningDetails')"
+            >
+                EXAMPLES AND GUIDANCE
+            </button>
+
+            <div
+                class="details"
+                id="learningDetails"
+            >
+
+                <p>
+                    You might have learned something about yourself,
+                    such as noticing an insight or piece of wisdom that
+                    you possess.
+                </p>
+
+                <p>
+                    You might discover something new or interesting
+                    about another person, even someone you have known
+                    for a long time.
+                </p>
+
+                <p>
+                    It could simply be a new fact or a new perspective
+                    on something. Curiosity and learning can themselves
+                    be sources of happiness.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCOMPLISHMENT -->
+
+    <section class="glad-section accomplishment">
+
+        <div class="letter">
+            A
+        </div>
+
+        <div class="section-content">
+
+            <h2>Accomplishment</h2>
+
+            <p class="question">
+                One small thing you accomplished or achieved today.
+            </p>
+
+            <p class="instruction">
+                Your accomplishment doesn't have to be big. Notice
+                something you did for yourself or someone else.
+            </p>
+
+            <textarea
+                id="accomplishment"
+                placeholder="Today I accomplished..."
+            ></textarea>
+
+            <button
+                class="details-button"
+                onclick="toggleDetails('accomplishmentDetails')"
+            >
+                EXAMPLES AND GUIDANCE
+            </button>
+
+            <div
+                class="details"
+                id="accomplishmentDetails"
+            >
+
+                <p>
+                    Getting enough sleep.
+                </p>
+
+                <p>
+                    Choosing not to eat extra sugary foods.
+                </p>
+
+                <p>
+                    Making your bed or getting dressed in the morning.
+                </p>
+
+                <p>
+                    Doing anything that moves you, even slightly,
+                    toward reaching a long-term goal.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DELIGHT -->
+
+    <section class="glad-section delight">
+
+        <div class="letter">
+            D
+        </div>
+
+        <div class="section-content">
+
+            <h2>Delight</h2>
+
+            <p class="question">
+                One moment of delight that touched you today.
+            </p>
+
+            <p class="instruction">
+                Look for anything that made you laugh, smile, or brought
+                you a small moment of joy.
+            </p>
+
+            <textarea
+                id="delight"
+                placeholder="Today I noticed..."
+            ></textarea>
+
+            <button
+                class="details-button"
+                onclick="toggleDetails('delightDetails')"
+            >
+                EXAMPLES AND GUIDANCE
+            </button>
+
+            <div
+                class="details"
+                id="delightDetails"
+            >
+
+                <p>
+                    Hearing a bird chirp, seeing a colourful flower,
+                    or noticing the blue of the sky.
+                </p>
+
+                <p>
+                    Laughing, tasting food, returning a smile, or
+                    hugging a friend or family member.
+                </p>
+
+                <p>
+                    Even something as simple as noticing the pleasant
+                    sensation of water on your hands while washing
+                    the dishes can count.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPLETE -->
+
+    <section class="glad-complete">
+
+        <button
+            class="complete-button"
+            onclick="completeExercise()"
+        >
+            COMPLETE G.L.A.D.
+        </button>
+
+        <button
+            class="back-button"
+            onclick="location.href='urge.html'"
+        >
+            BACK TO THERMOMETER
+        </button>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+let timeRemaining = 14 * 60;
+
+let timerRunning = false;
+
+let timerInterval = null;
+
+
+const timer =
+    document.getElementById("timer");
+
+const timerStart =
+    document.getElementById("timerStart");
+
+const timerReset =
+    document.getElementById("timerReset");
+
+
+function updateTimerDisplay() {
+
+    const minutes =
+        Math.floor(timeRemaining / 60);
+
+    const seconds =
+        timeRemaining % 60;
+
+    timer.textContent =
+        String(minutes).padStart(2, "0")
+        + ":"
+        + String(seconds).padStart(2, "0");
+
+}
+
+
+timerStart.addEventListener(
+    "click",
+    function() {
+
+        if (timerRunning) {
+
+            clearInterval(timerInterval);
+
+            timerRunning = false;
+
+            timerStart.textContent = "START";
+
+            return;
+
+        }
+
+
+        timerRunning = true;
+
+        timerStart.textContent = "PAUSE";
+
+
+        timerInterval =
+            setInterval(
+                function() {
+
+                    if (timeRemaining > 0) {
+
+                        timeRemaining--;
+
+                        updateTimerDisplay();
+
+                    }
+
+                    else {
+
+                        clearInterval(timerInterval);
+
+                        timerRunning = false;
+
+                        timerStart.textContent = "START";
+
+                    }
+
+                },
+                1000
+            );
+
+    }
+);
+
+
+timerReset.addEventListener(
+    "click",
+    function() {
+
+        clearInterval(timerInterval);
+
+        timerRunning = false;
+
+        timeRemaining = 14 * 60;
+
+        timerStart.textContent = "START";
+
+        updateTimerDisplay();
+
+    }
+);
+
+
+/* =========================================================
+   EXPANDABLE GUIDANCE
+========================================================= */
+
+function toggleDetails(id) {
+
+    const details =
+        document.getElementById(id);
+
+    details.classList.toggle("open");
+
+}
+
+
+/* =========================================================
+   COMPLETE
+========================================================= */
+
+function completeExercise() {
+
+    alert(
+        "G.L.A.D. complete. You gave yourself 14 minutes to refocus."
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
