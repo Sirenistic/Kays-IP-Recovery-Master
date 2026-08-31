@@ -3,85 +3,354 @@
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
-
     min-height: 100vh;
-
     background: #11111a;
-
     color: white;
-
     font-family: Arial, sans-serif;
 }
 
 
-/* =========================
-   PAGE
-========================= */
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+.recovery-home {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 30px 20px 70px;
+}
+
+
+/* TOP URGE SECTION */
+
+.recovery-hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.recovery-hero h1 {
+    margin: 0;
+    color: white;
+    font-size: clamp(48px, 10vw, 90px);
+    font-weight: 900;
+    line-height: .88;
+    letter-spacing: -4px;
+}
+
+
+.recovery-hero p {
+    margin: 25px 0 35px;
+    color: #aaaabd;
+    font-size: 18px;
+}
+
+
+.recovery-choice-buttons {
+    width: 100%;
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.recovery-choice {
+    width: 100%;
+    padding: 28px 20px;
+    border: none;
+    border-radius: 24px;
+    color: white;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+}
+
+
+.recovery-choice:hover {
+    transform: scale(1.03);
+    filter: brightness(1.08);
+}
+
+
+.recovery-choice:active {
+    transform: scale(.97);
+}
+
+
+.recovery-choice strong {
+    display: block;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+
+.recovery-choice span {
+    display: block;
+    margin-top: 7px;
+    font-size: 15px;
+}
+
+
+.recovery-yes {
+    background: #e83e5b;
+    box-shadow: 0 12px 35px rgba(232, 62, 91, .25);
+}
+
+
+.recovery-no {
+    background: #4267e8;
+    box-shadow: 0 12px 35px rgba(66, 103, 232, .25);
+}
+
+
+/* HOME SECTIONS */
+
+.recovery-section {
+    width: 100%;
+    margin-top: 25px;
+    padding: 27px;
+    border-radius: 24px;
+    background: #1a1a27;
+    border: 1px solid #29293a;
+}
+
+
+.recovery-section-title {
+    color: white;
+    font-size: 26px;
+    font-weight: 900;
+}
+
+
+/* TRIGGERS */
+
+.recovery-section-header {
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.recovery-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #29293a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 23px;
+}
+
+
+.recovery-expandable {
+    display: none;
+    margin-top: 20px;
+}
+
+
+.recovery-expandable.open {
+    display: block;
+}
+
+
+.recovery-subheader {
+    width: 100%;
+    margin-top: 10px;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    color: #11111a;
+    cursor: pointer;
+}
+
+
+.internal-trigger {
+    background: #8b7cf6;
+}
+
+
+.external-trigger {
+    background: #4267e8;
+}
+
+
+.recovery-subcontent {
+    display: none;
+}
+
+
+.recovery-subcontent.open {
+    display: block;
+}
+
+
+.trigger-item {
+    margin-top: 8px;
+    padding: 15px 18px;
+    border-radius: 14px;
+    background: #242435;
+    color: #d5d5e2;
+    font-size: 14px;
+    line-height: 1.45;
+    text-align: left;
+}
+
+
+/* 4X SECTIONS */
+
+.recovery-subsection {
+    margin-top: 32px;
+}
+
+
+.recovery-subsection h2 {
+    margin: 0 0 15px;
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+.recovery-help-text {
+    margin: -5px 0 15px;
+    color: #aaaabd;
+    font-size: 14px;
+}
+
+
+.recovery-input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.recovery-input {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 17px;
+    border: 2px solid #303044;
+    border-radius: 14px;
+    outline: none;
+    background: #11111a;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.recovery-input::placeholder {
+    color: #68687b;
+}
+
+
+.recovery-input:focus {
+    border-color: #4267e8;
+    box-shadow: 0 0 0 3px rgba(66, 103, 232, .15);
+}
+
+
+/* CONTINGENCY PLANS */
+
+.recovery-thermometer-link {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    background: #ff7043;
+    color: #11111a;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+.recovery-thermometer-link:hover {
+    filter: brightness(1.08);
+}
+
+
+.recovery-four-weeks {
+    margin: 0;
+    color: #aaaabd;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   THERMOMETER PAGE
+========================================================= */
 
 .urge-page {
-
     min-height: 100vh;
-
     padding: 40px 20px 45px;
-
     text-align: center;
 }
 
 
 .urge-page h1 {
-
     margin: 0;
-
     font-size: clamp(38px, 6vw, 65px);
-
     line-height: 1;
 }
 
 
 .subtitle {
-
     margin: 15px 0 35px;
-
     color: #aaaabd;
-
     font-size: 17px;
 }
 
 
-/* =========================
-   LAYOUT
-========================= */
+/* LAYOUT */
 
 .thermometer-layout {
-
     width: 100%;
-
     max-width: 1100px;
-
     margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        190px
+        210px
         1fr
-        250px;
+        270px;
 
-    gap: 8px;
+    gap: 10px;
 
     align-items: center;
 }
 
 
-/* =========================
-   THERMOMETER AREA
-========================= */
+/* THERMOMETER AREA */
 
 .thermometer-area {
-
     height: 620px;
 
     display: flex;
@@ -93,28 +362,24 @@ body {
 
 
 .thermometer-container {
-
     position: relative;
 
-    width: 180px;
+    width: 190px;
 
     height: 600px;
 }
 
 
-/* =========================
-   NUMBERS
-========================= */
+/* NUMBERS */
 
 .thermometer-numbers {
-
     position: absolute;
 
     left: 0;
 
     top: 30px;
 
-    width: 50px;
+    width: 55px;
 
     height: 500px;
 
@@ -124,25 +389,22 @@ body {
 
     justify-content: space-between;
 
-    padding-right: 8px;
+    padding-right: 10px;
 
     text-align: right;
 
-    font-size: 16px;
+    font-size: 17px;
 
     font-weight: 900;
 }
 
 
-/* =========================
-   THERMOMETER
-========================= */
+/* THERMOMETER */
 
 .thermometer {
-
     position: absolute;
 
-    left: 60px;
+    left: 65px;
 
     top: 0;
 
@@ -152,12 +414,9 @@ body {
 }
 
 
-/* =========================
-   TUBE
-========================= */
+/* TUBE */
 
 .tube {
-
     position: absolute;
 
     left: 25px;
@@ -182,19 +441,16 @@ body {
 
 
 .segment {
-
     width: 100%;
 
-    height: calc(500px / 11);
+    height: 45.45px;
 
     border-bottom:
         2px solid rgba(0,0,0,.18);
 }
 
 
-/* =========================
-   COLOURS
-========================= */
+/* COLOURS */
 
 .s100 {
     background: #e53935;
@@ -237,19 +493,14 @@ body {
 }
 
 .s0 {
-
     background: #f4fff4;
-
     border-bottom: none;
 }
 
 
-/* =========================
-   BULB
-========================= */
+/* BULB */
 
 .bulb {
-
     position: absolute;
 
     left: 0;
@@ -273,7 +524,6 @@ body {
 
 
 .bulb::before {
-
     content: "";
 
     position: absolute;
@@ -292,12 +542,9 @@ body {
 }
 
 
-/* =========================
-   VERTICAL SLIDER
-========================= */
+/* SLIDER */
 
 #slider {
-
     position: absolute;
 
     z-index: 40;
@@ -324,19 +571,14 @@ body {
 }
 
 
-/* =========================
-   TRIANGLE POINTER
-========================= */
+/* TRIANGLE */
 
 .pointer {
-
     position: absolute;
 
     z-index: 50;
 
     left: 95px;
-
-    bottom: 256px;
 
     width: 0;
 
@@ -361,12 +603,9 @@ body {
 }
 
 
-/* =========================
-   DEFINITIONS
-========================= */
+/* DEFINITIONS */
 
 .definitions {
-
     height: 500px;
 
     display: flex;
@@ -380,7 +619,6 @@ body {
 
 
 .definition {
-
     display: flex;
 
     align-items: center;
@@ -400,7 +638,6 @@ body {
 /* NUMBER CIRCLES */
 
 .definition strong {
-
     flex: 0 0 38px;
 
     width: 38px;
@@ -470,12 +707,9 @@ body {
 }
 
 
-/* =========================
-   SKILLS CARD
-========================= */
+/* SKILLS CARD */
 
 .skills-card {
-
     width: 100%;
 
     min-height: 250px;
@@ -499,47 +733,21 @@ body {
     color: #11111a;
 
     cursor: pointer;
-
-    font-family: Arial, sans-serif;
-
-    transition:
-        transform .15s ease,
-        filter .15s ease;
-}
-
-
-.skills-card:hover {
-
-    transform: scale(1.02);
-
-    filter: brightness(1.08);
-}
-
-
-.skills-card:active {
-
-    transform: scale(.98);
 }
 
 
 .skills-title {
-
     font-size: 11px;
 
     font-weight: 900;
 
     letter-spacing: 1px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 
-/* =========================
-   SKILLS
-========================= */
-
 .skills-list {
-
     width: 100%;
 
     display: flex;
@@ -553,33 +761,33 @@ body {
 
 
 .skill-button {
-
-    display: block;
-
     width: 90%;
 
     padding: 12px 16px;
 
+    border: none;
+
     border-radius: 14px;
 
-    background: rgba(255,255,255,.25);
+    background:
+        rgba(255,255,255,.28);
 
     color: #11111a;
 
-    font-size: 18px;
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
 
     font-weight: 900;
 
-    line-height: 1.2;
+    text-align: center;
 
     box-shadow:
-        0 3px 8px rgba(0,0,0,.12);
+        0 4px 10px rgba(0,0,0,.12);
 }
 
 
-/* =========================
-   SKILL CARD COLOURS
-========================= */
+/* SKILL CARD COLOURS */
 
 .skill-blue {
     background: #64b5f6;
@@ -598,12 +806,9 @@ body {
 }
 
 
-/* =========================
-   BACK
-========================= */
+/* BACK */
 
 .back-button {
-
     margin-top: 25px;
 
     background: none;
@@ -613,26 +818,19 @@ body {
     color: #aaaabd;
 
     cursor: pointer;
-
-    font-size: 15px;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media (max-width: 950px) {
 
     .thermometer-layout {
-
         grid-template-columns:
-            190px 1fr;
+            200px 1fr;
     }
 
-
     .skills-card {
-
         grid-column: 1 / -1;
 
         max-width: 350px;
@@ -642,22 +840,17 @@ body {
 }
 
 
-/* =========================
-   PHONE
-========================= */
+/* PHONE */
 
 @media (max-width: 600px) {
 
     .thermometer-layout {
-
         display: flex;
 
         flex-direction: column;
     }
 
-
     .definitions {
-
         width: 100%;
 
         height: auto;
@@ -665,334 +858,18 @@ body {
         gap: 10px;
     }
 
-
     .skills-card {
-
         width: 100%;
     }
-```css
-/* ==================================================
-   RECOVERY HOME PAGE
-   These styles are intentionally isolated from
-   the thermometer page.
-================================================== */
-
-.recovery-home {
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 30px 20px 70px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.recovery-hero {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-.recovery-hero h1 {
-    margin: 0;
-    color: white;
-    font-size: clamp(48px, 11vw, 90px);
-    line-height: .88;
-    letter-spacing: -4px;
-}
-
-
-.recovery-hero p {
-    margin: 25px 0 35px;
-    color: #aaaabd;
-    font-size: 18px;
-}
-
-
-.recovery-choice-buttons {
-    width: 100%;
-    max-width: 520px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-
-.recovery-choice {
-    width: 100%;
-    border: none;
-    border-radius: 24px;
-    padding: 27px 20px;
-    color: white;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    transition: transform .15s ease, filter .15s ease;
-}
-
-
-.recovery-choice:hover {
-    transform: scale(1.025);
-    filter: brightness(1.08);
-}
-
-
-.recovery-choice:active {
-    transform: scale(.98);
-}
-
-
-.recovery-choice strong {
-    display: block;
-    font-size: 34px;
-    font-weight: 900;
-}
-
-
-.recovery-choice span {
-    display: block;
-    margin-top: 6px;
-    font-size: 15px;
-}
-
-
-.recovery-yes {
-    background: #e53935;
-    box-shadow: 0 12px 35px rgba(229,57,53,.2);
-}
-
-
-.recovery-no {
-    background: #4267e8;
-    box-shadow: 0 12px 35px rgba(66,103,232,.2);
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.recovery-section {
-    margin-top: 25px;
-    padding: 25px;
-    background: #1a1a27;
-    border: 1px solid #29293a;
-    border-radius: 24px;
-}
-
-
-.recovery-section-title {
-    font-size: 25px;
-    font-weight: 900;
-}
-
-
-.recovery-section-header {
-    width: 100%;
-    padding: 0;
-    background: none;
-    border: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, sans-serif;
-    font-size: 25px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-.recovery-arrow {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #29293a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-}
-
-
-/* =========================
-   TRIGGERS
-========================= */
-
-.recovery-expandable {
-    display: none;
-    margin-top: 20px;
-}
-
-
-.recovery-expandable.open {
-    display: block;
-}
-
-
-.recovery-subheader {
-    width: 100%;
-    margin-top: 10px;
-    padding: 17px 20px;
-    border: none;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #11111a;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 900;
-    cursor: pointer;
-}
-
-
-.internal-trigger {
-    background: #7c6ff2;
-}
-
-
-.external-trigger {
-    background: #4267e8;
-}
-
-
-.recovery-subcontent {
-    display: none;
-}
-
-
-.recovery-subcontent.open {
-    display: block;
-}
-
-
-.trigger-item {
-    margin-top: 8px;
-    padding: 14px 17px;
-    border-radius: 13px;
-    background: #242435;
-    color: #d5d5e2;
-    font-size: 14px;
-    line-height: 1.45;
-    text-align: left;
-}
-
-
-/* =========================
-   FOUR X
-========================= */
-
-.recovery-subsection {
-    margin-top: 30px;
-}
-
-
-.recovery-subsection h2 {
-    margin: 0 0 15px;
-    color: white;
-    font-size: 18px;
-    font-weight: 900;
-}
-
-
-.recovery-help-text {
-    margin: -5px 0 15px;
-    color: #aaaabd;
-    font-size: 14px;
-}
-
-
-.recovery-input-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-.recovery-input {
-    width: 100%;
-    min-height: 52px;
-    padding: 14px 17px;
-    border: 2px solid #303044;
-    border-radius: 13px;
-    outline: none;
-    background: #11111a;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-}
-
-
-.recovery-input::placeholder {
-    color: #68687b;
-}
-
-
-.recovery-input:focus {
-    border-color: #4267e8;
-    box-shadow: 0 0 0 3px rgba(66,103,232,.15);
-}
-
-
-/* =========================
-   THERMOMETER LINK
-========================= */
-
-.recovery-thermometer-link {
-    width: 100%;
-    padding: 17px;
-    border: none;
-    border-radius: 15px;
-    background: #ff7043;
-    color: #11111a;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: 900;
-    cursor: pointer;
-    transition: transform .15s ease, filter .15s ease;
-}
-
-
-.recovery-thermometer-link:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.08);
-}
-
-
-.recovery-four-weeks {
-    margin: 0;
-    color: #aaaabd;
-    font-size: 16px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
 
     .recovery-home {
-        padding: 15px 15px 50px;
+        padding: 15px;
     }
 
     .recovery-section {
-        padding: 20px;
+        padding: 21px;
         border-radius: 20px;
     }
-
-    .recovery-hero {
-        min-height: 85vh;
-    }
-
-}
-```
 
 }
 ```
