@@ -1,12 +1,672 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #11111a;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.urge-page {
+
+    min-height: 100vh;
+
+    padding: 40px 20px 45px;
+
+    text-align: center;
+}
+
+
+.urge-page h1 {
+
+    margin: 0;
+
+    font-size: clamp(38px, 6vw, 65px);
+
+    line-height: 1;
+}
+
+
+.subtitle {
+
+    margin: 15px 0 35px;
+
+    color: #aaaabd;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.thermometer-layout {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        210px
+        1fr
+        270px;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   THERMOMETER AREA
+========================= */
+
+.thermometer-area {
+
+    height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.thermometer-container {
+
+    position: relative;
+
+    width: 190px;
+
+    height: 600px;
+}
+
+
+/* =========================
+   NUMBERS
+========================= */
+
+.thermometer-numbers {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 30px;
+
+    width: 55px;
+
+    height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding-right: 10px;
+
+    text-align: right;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   THERMOMETER
+========================= */
+
+.thermometer {
+
+    position: absolute;
+
+    left: 65px;
+
+    top: 0;
+
+    width: 120px;
+
+    height: 600px;
+}
+
+
+/* =========================
+   TUBE
+========================= */
+
+.tube {
+
+    position: absolute;
+
+    left: 25px;
+
+    top: 30px;
+
+    width: 70px;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius:
+        35px 35px 8px 8px;
+
+    border: 4px solid #666678;
+
+    box-shadow:
+        inset 0 0 12px rgba(0,0,0,.35),
+        0 8px 25px rgba(0,0,0,.35);
+}
+
+
+.segment {
+
+    width: 100%;
+
+    height: 45.45px;
+
+    border-bottom:
+        2px solid rgba(0,0,0,.18);
+}
+
+
+/* =========================
+   COLOURS
+========================= */
+
+.s100 {
+    background: #e53935;
+}
+
+.s90 {
+    background: #ef5350;
+}
+
+.s80 {
+    background: #ff7043;
+}
+
+.s70 {
+    background: #ff914d;
+}
+
+.s60 {
+    background: #ffd54f;
+}
+
+.s50 {
+    background: #ffe082;
+}
+
+.s40 {
+    background: #64b5f6;
+}
+
+.s30 {
+    background: #42a5f5;
+}
+
+.s20 {
+    background: #64b5f6;
+}
+
+.s10 {
+    background: #b3ddff;
+}
+
+.s0 {
+
+    background: #f4fff4;
+
+    border-bottom: none;
+}
+
+
+/* =========================
+   BULB
+========================= */
+
+.bulb {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #f4fff4;
+
+    border: 4px solid #666678;
+
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,.15),
+        0 8px 25px rgba(0,0,0,.35);
+}
+
+
+.bulb::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 62px;
+
+    height: 85px;
+
+    left: 25px;
+
+    bottom: 70px;
+
+    background: #f4fff4;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
 #slider {
+
     position: absolute;
 
     z-index: 40;
 
     left: -5px;
 
-    top: 0;
+    top: 30px;
 
     width: 130px;
 
-    height: 550px;
+    height: 500px;
+
+    opacity: 0;
+
+    cursor: ns-resize;
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    writing-mode: vertical-lr;
+
+    direction: rtl;
+}
+
+
+/* =========================
+   TRIANGLE
+========================= */
+
+.pointer {
+
+    position: absolute;
+
+    z-index: 50;
+
+    left: 95px;
+
+    bottom: calc(40% + 70px);
+
+    width: 0;
+
+    height: 0;
+
+    border-top:
+        13px solid transparent;
+
+    border-bottom:
+        13px solid transparent;
+
+    border-right:
+        25px solid white;
+
+    filter:
+        drop-shadow(0 2px 4px black);
+
+    pointer-events: none;
+
+    transition:
+        bottom 0.1s ease;
+}
+
+
+/* =========================
+   DEFINITIONS
+========================= */
+
+.definitions {
+
+    height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    text-align: left;
+}
+
+
+.definition {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 40px;
+
+    color: #d2d2df;
+
+    font-size: 13px;
+
+    line-height: 1.25;
+}
+
+
+/* NUMBER CIRCLES */
+
+.definition strong {
+
+    flex: 0 0 38px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    color: #11111a;
+}
+
+
+/* MATCH COLOURS */
+
+.level-100 strong {
+    background: #e53935;
+}
+
+.level-90 strong {
+    background: #ef5350;
+}
+
+.level-80 strong {
+    background: #ff7043;
+}
+
+.level-70 strong {
+    background: #ff914d;
+}
+
+.level-60 strong {
+    background: #ffd54f;
+}
+
+.level-50 strong {
+    background: #ffe082;
+}
+
+.level-40 strong {
+    background: #64b5f6;
+}
+
+.level-30 strong {
+    background: #42a5f5;
+}
+
+.level-20 strong {
+    background: #64b5f6;
+}
+
+.level-10 strong {
+    background: #b3ddff;
+}
+
+.level-0 strong {
+    background: #f4fff4;
+}
+
+
+/* =========================
+   SKILLS CARD
+========================= */
+
+.skills-card {
+
+    width: 100%;
+
+    min-height: 250px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #11111a;
+}
+
+
+.skills-title {
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   SKILL BUTTONS
+========================= */
+
+.skills-list {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.skill-button {
+
+    width: 90%;
+
+    padding: 12px 16px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.28);
+
+    color: #11111a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.12);
+
+    transition:
+        transform .15s ease,
+        background .15s ease;
+}
+
+
+.skill-button:hover {
+
+    transform: scale(1.04);
+
+    background:
+        rgba(255,255,255,.48);
+}
+
+
+.skill-button:active {
+
+    transform: scale(.97);
+}
+
+
+/* =========================
+   SKILL CARD COLOURS
+========================= */
+
+.skill-blue {
+    background: #64b5f6;
+}
+
+.skill-yellow {
+    background: #ffd54f;
+}
+
+.skill-orange {
+    background: #ff7043;
+}
+
+.skill-red {
+    background: #e53935;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back-button {
+
+    margin-top: 25px;
+
+    background: none;
+
+    border: none;
+
+    color: #aaaabd;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .thermometer-layout {
+
+        grid-template-columns:
+            200px 1fr;
+    }
+
+
+    .skills-card {
+
+        grid-column: 1 / -1;
+
+        max-width: 350px;
+
+        margin: 10px auto 0;
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+    .thermometer-layout {
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .definitions {
+
+        width: 100%;
+
+        height: auto;
+
+        gap: 10px;
+    }
+
+
+    .skills-card {
+
+        width: 100%;
+    }
+}
