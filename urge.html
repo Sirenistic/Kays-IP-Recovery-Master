@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,9 @@
         Move the indicator to where you are right now.
     </p>
 
+
     <div class="thermometer-layout">
+
 
         <!-- THERMOMETER -->
 
@@ -28,7 +31,11 @@
 
             <div class="thermometer-container">
 
+
+                <!-- NUMBERS LEFT OF THERMOMETER -->
+
                 <div class="thermometer-numbers">
+
                     <div>100</div>
                     <div>90</div>
                     <div>80</div>
@@ -40,7 +47,11 @@
                     <div>20</div>
                     <div>10</div>
                     <div>0</div>
+
                 </div>
+
+
+                <!-- THERMOMETER -->
 
                 <div class="thermometer">
 
@@ -60,7 +71,11 @@
 
                     </div>
 
+
                     <div class="bulb"></div>
+
+
+                    <!-- VERTICAL SLIDER -->
 
                     <input
                         type="range"
@@ -70,6 +85,9 @@
                         step="10"
                         id="slider"
                     >
+
+
+                    <!-- TRIANGLE INDICATOR -->
 
                     <div
                         class="pointer"
@@ -83,59 +101,71 @@
         </section>
 
 
+
         <!-- DEFINITIONS -->
 
         <section class="definitions">
+
 
             <div class="definition level-100">
                 <strong>100</strong>
                 <span>Highest level of distress. Feeling out of control.</span>
             </div>
 
+
             <div class="definition level-90">
                 <strong>90</strong>
                 <span>Extremely distressed. Physiological symptoms are present.</span>
             </div>
+
 
             <div class="definition level-80">
                 <strong>80</strong>
                 <span>Very distressed; can't concentrate. Physiological symptoms are present.</span>
             </div>
 
+
             <div class="definition level-70">
                 <strong>70</strong>
                 <span>Quite distressed; losing focus. Physiological symptoms are present.</span>
             </div>
+
 
             <div class="definition level-60">
                 <strong>60</strong>
                 <span>Moderate to strong distress/anxiety.</span>
             </div>
 
+
             <div class="definition level-50">
                 <strong>50</strong>
                 <span>Moderate distress/anxiety.</span>
             </div>
+
 
             <div class="definition level-40">
                 <strong>40</strong>
                 <span>Mild to moderate distress/anxiety.</span>
             </div>
 
+
             <div class="definition level-30">
                 <strong>30</strong>
                 <span>Mild distress/anxiety; no interference with functioning.</span>
             </div>
+
 
             <div class="definition level-20">
                 <strong>20</strong>
                 <span>Minimal distress/anxiety.</span>
             </div>
 
+
             <div class="definition level-10">
                 <strong>10</strong>
                 <span>Alert, focused, concentrating.</span>
             </div>
+
 
             <div class="definition level-0">
                 <strong>0</strong>
@@ -145,11 +175,13 @@
         </section>
 
 
+
         <!-- SKILLS -->
 
-        <div
+        <button
             class="skills-card skill-blue"
             id="skillsCard"
+            onclick="location.href='tools.html'"
         >
 
             <div class="skills-title">
@@ -161,7 +193,7 @@
                 id="skillsList"
             ></div>
 
-        </div>
+        </button>
 
     </div>
 
@@ -176,20 +208,21 @@
 </main>
 
 
+
 <script>
 
-const slider = document.getElementById("slider");
+const slider =
+    document.getElementById("slider");
 
-const pointer = document.getElementById("pointer");
+const pointer =
+    document.getElementById("pointer");
 
-const skillsList = document.getElementById("skillsList");
+const skillsList =
+    document.getElementById("skillsList");
 
-const skillsCard = document.getElementById("skillsCard");
+const skillsCard =
+    document.getElementById("skillsCard");
 
-
-/* =========================
-   SKILLS
-========================= */
 
 const skills = {
 
@@ -202,103 +235,69 @@ const skills = {
     30: [],
 
     40: [
-        ["Observe", "observe.html"],
-        ["Full Participation", "full-participation.html"]
+        "Observe",
+        "Full Participation"
     ],
 
     50: [
-        ["G.L.A.D", "glad.html"],
-        ["Urge Surfing", "urge-surfing.html"]
+        "G.L.A.D",
+        "Urge Surfing"
     ],
 
     60: [
-        ["Breathing Exercise", "breathing.html"],
-        ["Thought Log", "thought-log.html"]
+        "Breathing Exercise",
+        "Thought Log"
     ],
 
     70: [
-        ["Notice, Name, Make Room", "notice-name-make-room.html"]
+        "Notice, Name, Make Room"
     ],
 
     80: [
-        ["Drop Anchor", "drop-anchor.html"],
-        ["ACE", "ace.html"]
+        "Drop Anchor",
+        "ACE"
     ],
 
     90: [
-        ["S.T.O.P", "stop.html"],
-        ["5-5-5", "five-five-five.html"]
+        "S.T.O.P",
+        "5-5-5"
     ],
 
     100: [
-        ["T.I.P.P", "tipp.html"]
+        "T.I.P.P"
     ]
 
 };
 
 
-/* =========================
-   UPDATE
-========================= */
-
 function update() {
 
-    const value = Number(slider.value);
+    const value =
+        Number(slider.value);
 
-
-    /*
-       POINTER
-
-       This is the original working
-       pointer positioning.
-    */
 
     pointer.style.bottom =
         `calc(${value}% + 70px)`;
 
 
-    /*
-       CLEAR SKILLS
-    */
-
     skillsList.innerHTML = "";
 
-
-    /*
-       CREATE BUTTONS
-    */
 
     skills[value].forEach(skill => {
 
         const button =
-            document.createElement("button");
+            document.createElement("span");
 
         button.className =
             "skill-button";
 
         button.textContent =
-            skill[0];
-
-        button.addEventListener(
-            "click",
-            function(event) {
-
-                event.stopPropagation();
-
-                window.location.href =
-                    skill[1];
-
-            }
-        );
+            skill;
 
         skillsList.appendChild(button);
 
     });
 
-
-    /*
-       CARD COLOUR
-    */
 
     skillsCard.className =
         "skills-card";
@@ -349,6 +348,8 @@ update();
 
 </script>
 
+
 </body>
 
 </html>
+```
