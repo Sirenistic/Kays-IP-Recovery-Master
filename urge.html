@@ -26,18 +26,57 @@
     <h1>HOW DISTRESSED<br>ARE YOU?</h1>
 
     <p class="subtitle">
-        Move the thermometer to where you are right now.
+        Move the marker to where you are right now.
     </p>
 
 
     <div class="thermometer-layout">
 
 
-        <!-- THERMOMETER -->
+        <!-- LEFT: THERMOMETER -->
 
-        <div class="thermometer-wrapper">
+        <div class="thermometer-section">
 
-            <div class="thermometer-scale">
+            <div class="thermometer">
+
+                <div class="thermometer-tube">
+
+                    <div class="segment level-100"></div>
+                    <div class="segment level-90"></div>
+                    <div class="segment level-80"></div>
+                    <div class="segment level-70"></div>
+                    <div class="segment level-60"></div>
+                    <div class="segment level-50"></div>
+                    <div class="segment level-40"></div>
+                    <div class="segment level-30"></div>
+                    <div class="segment level-20"></div>
+                    <div class="segment level-10"></div>
+                    <div class="segment level-0"></div>
+
+                </div>
+
+
+                <div class="thermometer-bulb"></div>
+
+
+                <!-- INVISIBLE SLIDER -->
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="40"
+                    step="10"
+                    id="urgeSlider"
+                    class="vertical-slider"
+                >
+
+            </div>
+
+
+            <!-- LEVEL NUMBERS -->
+
+            <div class="level-numbers">
 
                 <span>100</span>
                 <span>90</span>
@@ -54,49 +93,24 @@
             </div>
 
 
-            <div class="thermometer">
+            <!-- CURRENT MARKER -->
 
-                <div
-                    class="thermometer-fill"
-                    id="thermometerFill"
-                ></div>
-
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="40"
-                    step="10"
-                    class="vertical-slider"
-                    id="urgeSlider"
-                >
-
-
-                <div class="thermometer-bulb"></div>
-
-            </div>
-
-
-            <!-- CURRENT VALUE -->
-
-            <div class="current-value">
-
-                <strong id="urgeNumber">40</strong>
-
-                <span>%</span>
-
+            <div
+                class="level-marker"
+                id="levelMarker"
+            >
+                <span></span>
             </div>
 
         </div>
 
 
 
-        <!-- DEFINITIONS -->
+        <!-- MIDDLE: DEFINITIONS -->
 
-        <div class="definitions" id="definitions">
+        <div class="definitions">
 
-            <div class="definition">
+            <div class="definition" data-level="100">
                 <strong>100</strong>
                 <span>
                     Highest level of distress.
@@ -104,7 +118,7 @@
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="90">
                 <strong>90</strong>
                 <span>
                     Extremely distressed.
@@ -112,7 +126,7 @@
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="80">
                 <strong>80</strong>
                 <span>
                     Very distressed; can't concentrate.
@@ -120,7 +134,7 @@
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="70">
                 <strong>70</strong>
                 <span>
                     Quite distressed; losing focus.
@@ -128,28 +142,28 @@
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="60">
                 <strong>60</strong>
                 <span>
                     Moderate to strong distress/anxiety.
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="50">
                 <strong>50</strong>
                 <span>
                     Moderate distress/anxiety.
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="40">
                 <strong>40</strong>
                 <span>
                     Mild to moderate distress/anxiety.
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="30">
                 <strong>30</strong>
                 <span>
                     Mild distress/anxiety;
@@ -157,21 +171,21 @@
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="20">
                 <strong>20</strong>
                 <span>
                     Minimal distress/anxiety.
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="10">
                 <strong>10</strong>
                 <span>
                     Alert, focused, concentrating.
                 </span>
             </div>
 
-            <div class="definition">
+            <div class="definition" data-level="0">
                 <strong>0</strong>
                 <span>
                     No distress, relaxed, calm.
@@ -182,7 +196,7 @@
 
 
 
-        <!-- SKILLS -->
+        <!-- RIGHT: SKILLS -->
 
         <button
             class="skills-card"
@@ -190,15 +204,8 @@
             onclick="location.href='tools.html'"
         >
 
-            <div class="skills-label">
+            <div class="skills-title">
                 SKILLS I CAN USE AT THIS LEVEL
-            </div>
-
-            <div
-                class="skills-level"
-                id="skillsLevel"
-            >
-                40
             </div>
 
             <div
@@ -207,10 +214,6 @@
             >
                 Observe<br>
                 Full Participation
-            </div>
-
-            <div class="skills-action">
-                VIEW THESE EXERCISES →
             </div>
 
         </button>
@@ -225,35 +228,34 @@
         ← BACK
     </button>
 
-
 </main>
 
 
 
 <script>
 
-const slider = document.getElementById("urgeSlider");
+const slider =
+    document.getElementById("urgeSlider");
 
-const number = document.getElementById("urgeNumber");
+const marker =
+    document.getElementById("levelMarker");
 
-const fill = document.getElementById("thermometerFill");
+const skillsCard =
+    document.getElementById("skillsCard");
 
-const skillsCard = document.getElementById("skillsCard");
-
-const skillsLevel = document.getElementById("skillsLevel");
-
-const skillsList = document.getElementById("skillsList");
+const skillsList =
+    document.getElementById("skillsList");
 
 
 const skills = {
 
-    0: "No skills needed<br>You're calm",
+    0: "No skill needed",
 
-    10: "Stay focused<br>Continue what you're doing",
+    10: "No skill needed",
 
-    20: "Observe<br>Notice what's happening",
+    20: "No skill needed",
 
-    30: "Observe<br>Full Participation",
+    30: "No skill needed",
 
     40: "Observe<br>Full Participation",
 
@@ -263,7 +265,7 @@ const skills = {
 
     70: "Notice, Name, Make Room",
 
-    80: "Drop Anchor<br>LIKE • ACE",
+    80: "Drop Anchor<br>LIKE<br>ACE",
 
     90: "S.T.O.P<br>5-5-5",
 
@@ -276,47 +278,62 @@ function updateThermometer() {
 
     const value = Number(slider.value);
 
-    number.textContent = value;
 
-    skillsLevel.textContent = value;
+    /* Move the marker */
 
-    skillsList.innerHTML = skills[value];
-
-
-    /* Fill thermometer */
-
-    fill.style.height = value + "%";
+    marker.style.bottom =
+        `calc(${value}% + 5px)`;
 
 
-    /* Change colour */
+    /* Change skills */
 
-    if (value <= 20) {
+    skillsList.innerHTML =
+        skills[value];
 
-        skillsCard.className = "skills-card level-calm";
+
+    /* Change skills-card colour */
+
+    skillsCard.className =
+        "skills-card";
+
+
+    if (value <= 30) {
+
+        skillsCard.classList.add(
+            "skill-calm"
+        );
 
     }
 
     else if (value <= 40) {
 
-        skillsCard.className = "skills-card level-blue";
+        skillsCard.classList.add(
+            "skill-blue"
+        );
 
     }
 
     else if (value <= 60) {
 
-        skillsCard.className = "skills-card level-yellow";
+        skillsCard.classList.add(
+            "skill-yellow"
+        );
 
     }
 
     else if (value <= 80) {
 
-        skillsCard.className = "skills-card level-orange";
+        skillsCard.classList.add(
+            "skill-orange"
+        );
 
     }
 
     else {
 
-        skillsCard.className = "skills-card level-red";
+        skillsCard.classList.add(
+            "skill-red"
+        );
 
     }
 
