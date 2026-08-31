@@ -2,18 +2,12 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Distress Thermometer</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 
@@ -21,182 +15,173 @@
 
 <main class="urge-page">
 
-    <div class="icon">🌡️</div>
-
-    <h1>HOW DISTRESSED<br>ARE YOU?</h1>
+    <h1>HOW DISTRESSED ARE YOU?</h1>
 
     <p class="subtitle">
-        Move the marker to where you are right now.
+        Move the thermometer to where you are right now.
     </p>
 
 
     <div class="thermometer-layout">
 
 
-        <!-- LEFT: THERMOMETER -->
+        <!-- =========================
+             THERMOMETER
+        ========================== -->
 
-        <div class="thermometer-section">
+        <section class="thermometer-area">
 
-            <div class="thermometer">
+            <div class="thermometer-container">
 
-                <div class="thermometer-tube">
+                <!-- NUMBERS LEFT OF THERMOMETER -->
 
-                    <div class="segment level-100"></div>
-                    <div class="segment level-90"></div>
-                    <div class="segment level-80"></div>
-                    <div class="segment level-70"></div>
-                    <div class="segment level-60"></div>
-                    <div class="segment level-50"></div>
-                    <div class="segment level-40"></div>
-                    <div class="segment level-30"></div>
-                    <div class="segment level-20"></div>
-                    <div class="segment level-10"></div>
-                    <div class="segment level-0"></div>
+                <div class="thermometer-numbers">
+
+                    <div>100</div>
+                    <div>90</div>
+                    <div>80</div>
+                    <div>70</div>
+                    <div>60</div>
+                    <div>50</div>
+                    <div>40</div>
+                    <div>30</div>
+                    <div>20</div>
+                    <div>10</div>
+                    <div>0</div>
 
                 </div>
 
 
-                <div class="thermometer-bulb"></div>
+                <!-- THERMOMETER -->
+
+                <div class="thermometer">
+
+                    <div class="tube">
+
+                        <div class="segment s100"></div>
+                        <div class="segment s90"></div>
+                        <div class="segment s80"></div>
+                        <div class="segment s70"></div>
+                        <div class="segment s60"></div>
+                        <div class="segment s50"></div>
+                        <div class="segment s40"></div>
+                        <div class="segment s30"></div>
+                        <div class="segment s20"></div>
+                        <div class="segment s10"></div>
+                        <div class="segment s0"></div>
+
+                    </div>
 
 
-                <!-- INVISIBLE SLIDER -->
+                    <div class="bulb"></div>
 
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="40"
-                    step="10"
-                    id="urgeSlider"
-                    class="vertical-slider"
-                >
+
+                    <!-- DRAG CONTROL -->
+
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="40"
+                        step="10"
+                        id="slider"
+                    >
+
+
+                    <!-- CURRENT LEVEL POINTER -->
+
+                    <div
+                        class="pointer"
+                        id="pointer"
+                    ></div>
+
+                </div>
 
             </div>
 
-
-            <!-- LEVEL NUMBERS -->
-
-            <div class="level-numbers">
-
-                <span>100</span>
-                <span>90</span>
-                <span>80</span>
-                <span>70</span>
-                <span>60</span>
-                <span>50</span>
-                <span>40</span>
-                <span>30</span>
-                <span>20</span>
-                <span>10</span>
-                <span>0</span>
-
-            </div>
-
-
-            <!-- CURRENT MARKER -->
-
-            <div
-                class="level-marker"
-                id="levelMarker"
-            >
-                <span></span>
-            </div>
-
-        </div>
+        </section>
 
 
 
-        <!-- MIDDLE: DEFINITIONS -->
+        <!-- =========================
+             DEFINITIONS
+        ========================== -->
 
-        <div class="definitions">
+        <section class="definitions">
 
-            <div class="definition" data-level="100">
+
+            <div class="definition level-100">
                 <strong>100</strong>
-                <span>
-                    Highest level of distress.
-                    Feeling out of control.
-                </span>
+                <span>Highest level of distress. Feeling out of control.</span>
             </div>
 
-            <div class="definition" data-level="90">
+
+            <div class="definition level-90">
                 <strong>90</strong>
-                <span>
-                    Extremely distressed.
-                    Physiological symptoms are present.
-                </span>
+                <span>Extremely distressed. Physiological symptoms are present.</span>
             </div>
 
-            <div class="definition" data-level="80">
+
+            <div class="definition level-80">
                 <strong>80</strong>
-                <span>
-                    Very distressed; can't concentrate.
-                    Physiological symptoms are present.
-                </span>
+                <span>Very distressed; can't concentrate. Physiological symptoms are present.</span>
             </div>
 
-            <div class="definition" data-level="70">
+
+            <div class="definition level-70">
                 <strong>70</strong>
-                <span>
-                    Quite distressed; losing focus.
-                    Physiological symptoms are present.
-                </span>
+                <span>Quite distressed; losing focus. Physiological symptoms are present.</span>
             </div>
 
-            <div class="definition" data-level="60">
+
+            <div class="definition level-60">
                 <strong>60</strong>
-                <span>
-                    Moderate to strong distress/anxiety.
-                </span>
+                <span>Moderate to strong distress/anxiety.</span>
             </div>
 
-            <div class="definition" data-level="50">
+
+            <div class="definition level-50">
                 <strong>50</strong>
-                <span>
-                    Moderate distress/anxiety.
-                </span>
+                <span>Moderate distress/anxiety.</span>
             </div>
 
-            <div class="definition" data-level="40">
+
+            <div class="definition level-40">
                 <strong>40</strong>
-                <span>
-                    Mild to moderate distress/anxiety.
-                </span>
+                <span>Mild to moderate distress/anxiety.</span>
             </div>
 
-            <div class="definition" data-level="30">
+
+            <div class="definition level-30">
                 <strong>30</strong>
-                <span>
-                    Mild distress/anxiety;
-                    no interference with functioning.
-                </span>
+                <span>Mild distress/anxiety; no interference with functioning.</span>
             </div>
 
-            <div class="definition" data-level="20">
+
+            <div class="definition level-20">
                 <strong>20</strong>
-                <span>
-                    Minimal distress/anxiety.
-                </span>
+                <span>Minimal distress/anxiety.</span>
             </div>
 
-            <div class="definition" data-level="10">
+
+            <div class="definition level-10">
                 <strong>10</strong>
-                <span>
-                    Alert, focused, concentrating.
-                </span>
+                <span>Alert, focused, concentrating.</span>
             </div>
 
-            <div class="definition" data-level="0">
+
+            <div class="definition level-0">
                 <strong>0</strong>
-                <span>
-                    No distress, relaxed, calm.
-                </span>
+                <span>No distress, relaxed, calm.</span>
             </div>
 
-        </div>
+        </section>
 
 
 
-        <!-- RIGHT: SKILLS -->
+        <!-- =========================
+             SKILLS
+        ========================== -->
 
         <button
             class="skills-card"
@@ -207,6 +192,7 @@
             <div class="skills-title">
                 SKILLS I CAN USE AT THIS LEVEL
             </div>
+
 
             <div
                 class="skills-list"
@@ -234,17 +220,13 @@
 
 <script>
 
-const slider =
-    document.getElementById("urgeSlider");
+const slider = document.getElementById("slider");
 
-const marker =
-    document.getElementById("levelMarker");
+const pointer = document.getElementById("pointer");
 
-const skillsCard =
-    document.getElementById("skillsCard");
+const skillsList = document.getElementById("skillsList");
 
-const skillsList =
-    document.getElementById("skillsList");
+const skillsCard = document.getElementById("skillsCard");
 
 
 const skills = {
@@ -274,79 +256,71 @@ const skills = {
 };
 
 
-function updateThermometer() {
+function update() {
 
     const value = Number(slider.value);
 
 
-    /* Move the marker */
+    /*
+       Move pointer up and down
+       the thermometer.
+    */
 
-    marker.style.bottom =
-        `calc(${value}% + 5px)`;
+    pointer.style.bottom =
+        `calc(${value}% + 70px)`;
 
 
-    /* Change skills */
+    /*
+       Change skills.
+    */
 
     skillsList.innerHTML =
         skills[value];
 
 
-    /* Change skills-card colour */
+    /*
+       Change skills card colour.
+    */
 
-    skillsCard.className =
-        "skills-card";
+    skillsCard.className = "skills-card";
 
 
     if (value <= 30) {
 
-        skillsCard.classList.add(
-            "skill-calm"
-        );
+        skillsCard.classList.add("skill-blue");
 
     }
 
     else if (value <= 40) {
 
-        skillsCard.classList.add(
-            "skill-blue"
-        );
+        skillsCard.classList.add("skill-blue");
 
     }
 
     else if (value <= 60) {
 
-        skillsCard.classList.add(
-            "skill-yellow"
-        );
+        skillsCard.classList.add("skill-yellow");
 
     }
 
     else if (value <= 80) {
 
-        skillsCard.classList.add(
-            "skill-orange"
-        );
+        skillsCard.classList.add("skill-orange");
 
     }
 
     else {
 
-        skillsCard.classList.add(
-            "skill-red"
-        );
+        skillsCard.classList.add("skill-red");
 
     }
 
 }
 
 
-slider.addEventListener(
-    "input",
-    updateThermometer
-);
+slider.addEventListener("input", update);
 
-
-updateThermometer();
+update();
 
 </script>
 
