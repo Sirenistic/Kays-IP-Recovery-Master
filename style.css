@@ -99,7 +99,7 @@ h1 {
 
 .urge-page {
     min-height: 100vh;
-    padding: 35px 25px 50px;
+    padding: 35px 30px 50px;
     text-align: center;
 }
 
@@ -109,7 +109,7 @@ h1 {
 }
 
 .urge-page h1 {
-    font-size: clamp(36px, 7vw, 65px);
+    font-size: clamp(34px, 7vw, 65px);
 }
 
 .urge-page .subtitle {
@@ -118,15 +118,22 @@ h1 {
 
 
 /* =========================
-   MAIN THERMOMETER LAYOUT
+   THREE COLUMN LAYOUT
 ========================= */
 
 .thermometer-layout {
+
     display: grid;
-    grid-template-columns: 300px 1fr 320px;
+
+    grid-template-columns:
+        300px
+        minmax(350px, 1fr)
+        300px;
+
     gap: 45px;
 
     width: min(1200px, 100%);
+
     margin: 0 auto;
 
     align-items: center;
@@ -134,146 +141,193 @@ h1 {
 
 
 /* =========================
-   THERMOMETER
+   THERMOMETER SECTION
 ========================= */
 
-.thermometer-wrapper {
+.thermometer-section {
+
     position: relative;
 
-    height: 720px;
+    height: 650px;
 
     display: flex;
-    justify-content: center;
+
     align-items: center;
+
+    justify-content: center;
+
 }
 
 
-/* Number scale */
-
-.thermometer-scale {
-    position: absolute;
-
-    left: 20px;
-
-    height: 600px;
-
-    top: 60px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    font-size: 20px;
-    font-weight: 800;
-
-    color: #aaaabd;
-}
-
-
-/* Main thermometer */
+/* =========================
+   THERMOMETER BODY
+========================= */
 
 .thermometer {
+
     position: relative;
 
-    width: 140px;
-    height: 680px;
+    width: 170px;
 
-    display: flex;
-    justify-content: center;
+    height: 620px;
+
 }
 
 
-/* Tube */
+/* THE LONG TUBE */
 
-.thermometer::before {
-
-    content: "";
+.thermometer-tube {
 
     position: absolute;
 
-    bottom: 70px;
+    left: 40px;
+
+    top: 20px;
 
     width: 90px;
-    height: 580px;
 
-    background: #262632;
+    height: 520px;
 
-    border: 6px solid #5d5d70;
+    border-radius: 45px 45px 18px 18px;
 
-    border-radius: 50px;
+    overflow: hidden;
+
+    border: 5px solid #77778b;
+
+    background: white;
 
     box-shadow:
-        inset 0 0 15px rgba(0,0,0,0.5),
-        0 10px 35px rgba(0,0,0,0.3);
+        inset 0 0 12px rgba(0,0,0,0.25),
+        0 12px 35px rgba(0,0,0,0.35);
 
 }
 
 
-/* Colour inside */
+/* =========================
+   COLOUR SEGMENTS
+========================= */
 
-.thermometer-fill {
+.segment {
 
-    position: absolute;
+    width: 100%;
 
-    z-index: 1;
+    height: calc(100% / 11);
 
-    bottom: 76px;
-
-    width: 78px;
-
-    height: 40%;
-
-    border-radius: 40px 40px 0 0;
-
-    background:
-        linear-gradient(
-            to top,
-            white 0%,
-            #d9edff 15%,
-            #4f8cff 35%,
-            #55c7ff 50%,
-            #ffe66d 70%,
-            #ff9f43 85%,
-            #e83e5b 100%
-        );
-
-    transition: height 0.15s ease;
+    border-bottom: 2px solid rgba(0,0,0,0.18);
 
 }
 
 
-/* Bulb */
+/* TOP = RED */
+
+.level-100 {
+    background: #e53935;
+}
+
+.level-90 {
+    background: #ef5350;
+}
+
+.level-80 {
+    background: #ff7043;
+}
+
+.level-70 {
+    background: #ff8a3d;
+}
+
+
+/* YELLOW */
+
+.level-60 {
+    background: #ffd54f;
+}
+
+.level-50 {
+    background: #ffe082;
+}
+
+
+/* BLUE */
+
+.level-40 {
+    background: #64b5f6;
+}
+
+.level-30 {
+    background: #42a5f5;
+}
+
+.level-20 {
+    background: #64b5f6;
+}
+
+.level-10 {
+    background: #90caf9;
+}
+
+
+/* BOTTOM = WHITE */
+
+.level-0 {
+    background: #ffffff;
+    border-bottom: none;
+}
+
+
+/* =========================
+   THERMOMETER BULB
+========================= */
 
 .thermometer-bulb {
 
     position: absolute;
 
-    z-index: 2;
+    left: 12px;
 
     bottom: 0;
 
     width: 145px;
+
     height: 145px;
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle at 35% 30%,
-            #ffb3c1,
-            #e83e5b 55%,
-            #a91f3c
-        );
+    background: #e53935;
 
-    border: 6px solid #5d5d70;
+    border: 5px solid #77778b;
 
     box-shadow:
-        0 0 40px rgba(232,62,91,0.35);
+        inset 0 0 15px rgba(0,0,0,0.2),
+        0 10px 35px rgba(0,0,0,0.35);
 
 }
 
 
-/* Invisible control */
+/* CONNECTING NECK */
+
+.thermometer-bulb::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+
+    height: 100px;
+
+    background: #e53935;
+
+    left: 27px;
+
+    bottom: 75px;
+
+}
+
+
+/* =========================
+   INVISIBLE SLIDER
+========================= */
 
 .vertical-slider {
 
@@ -281,17 +335,20 @@ h1 {
 
     z-index: 10;
 
-    bottom: 60px;
+    left: 15px;
+
+    top: 0;
 
     width: 140px;
 
-    height: 610px;
+    height: 620px;
 
     opacity: 0;
 
-    cursor: pointer;
+    cursor: ns-resize;
 
     appearance: none;
+
     -webkit-appearance: none;
 
     writing-mode: vertical-lr;
@@ -302,40 +359,62 @@ h1 {
 
 
 /* =========================
-   CURRENT NUMBER
+   LEVEL NUMBERS
 ========================= */
 
-.current-value {
+.level-numbers {
 
     position: absolute;
 
-    right: -30px;
+    left: -20px;
 
-    top: 50%;
+    top: 20px;
 
-    transform: translateY(-50%);
+    height: 520px;
 
     display: flex;
-    align-items: baseline;
 
-    gap: 5px;
+    flex-direction: column;
 
-    pointer-events: none;
-}
+    justify-content: space-between;
 
-.current-value strong {
+    font-size: 18px;
 
-    font-size: 72px;
+    font-weight: 800;
 
-    font-weight: 900;
+    color: #ffffff;
 
 }
 
-.current-value span {
 
-    font-size: 25px;
+/* =========================
+   CURRENT LEVEL INDICATOR
+========================= */
 
-    color: #aaaabd;
+.level-marker {
+
+    position: absolute;
+
+    left: 135px;
+
+    bottom: calc(40% + 5px);
+
+    width: 0;
+
+    height: 0;
+
+    border-top: 12px solid transparent;
+
+    border-bottom: 12px solid transparent;
+
+    border-right: 20px solid white;
+
+    filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,0.7));
+
+    transition: bottom 0.12s ease;
+
+    z-index: 20;
 
 }
 
@@ -346,7 +425,7 @@ h1 {
 
 .definitions {
 
-    height: 600px;
+    height: 520px;
 
     display: flex;
 
@@ -361,28 +440,26 @@ h1 {
 
 .definition {
 
-    display: flex;
+    display: grid;
 
-    gap: 15px;
+    grid-template-columns: 45px 1fr;
 
-    padding: 5px 0;
+    gap: 10px;
 
     font-size: 14px;
 
     line-height: 1.25;
 
-    color: #aaaabd;
+    color: #c0c0cf;
 
 }
 
 
 .definition strong {
 
-    min-width: 35px;
-
     color: white;
 
-    font-size: 16px;
+    font-size: 17px;
 
 }
 
@@ -400,29 +477,38 @@ h1 {
 
 .skills-card {
 
+    min-height: 260px;
+
+    width: 100%;
+
     border: none;
 
     border-radius: 28px;
 
-    padding: 35px 30px;
-
-    min-height: 300px;
+    padding: 35px 25px;
 
     color: white;
 
+    cursor: pointer;
+
     text-align: center;
 
-    cursor: pointer;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
 
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-
-    background: #4267e8;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.35);
+        filter 0.2s ease;
 
 }
 
@@ -430,6 +516,8 @@ h1 {
 .skills-card:hover {
 
     transform: scale(1.04);
+
+    filter: brightness(1.08);
 
 }
 
@@ -441,50 +529,26 @@ h1 {
 }
 
 
-.skills-label {
+.skills-title {
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: 800;
 
     letter-spacing: 1.5px;
 
-    opacity: 0.8;
-
-}
-
-
-.skills-level {
-
-    font-size: 70px;
-
-    font-weight: 900;
-
-    margin: 15px 0;
+    opacity: 0.75;
 
 }
 
 
 .skills-list {
 
-    font-size: 25px;
+    font-size: 26px;
 
     font-weight: 800;
 
-    line-height: 1.35;
-
-}
-
-
-.skills-action {
-
-    margin-top: 30px;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
+    line-height: 1.45;
 
 }
 
@@ -493,39 +557,39 @@ h1 {
    SKILL COLOURS
 ========================= */
 
-.level-calm {
-
-    background: #4267e8;
-
-}
-
-.level-blue {
+.skill-calm {
 
     background: #4f8cff;
 
 }
 
-.level-yellow {
+.skill-blue {
 
-    background: #e5b93f;
-
-}
-
-.level-orange {
-
-    background: #f27a38;
+    background: #3d8ee8;
 
 }
 
-.level-red {
+.skill-yellow {
 
-    background: #e83e5b;
+    background: #e6c044;
+
+}
+
+.skill-orange {
+
+    background: #ed7838;
+
+}
+
+.skill-red {
+
+    background: #df3d4d;
 
 }
 
 
 /* =========================
-   BACK BUTTON
+   BACK
 ========================= */
 
 .back-button {
@@ -546,89 +610,81 @@ h1 {
 
 
 /* =========================
-   PHONE
+   MOBILE
 ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .thermometer-layout {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            220px
+            1fr;
 
-        gap: 20px;
-
-    }
-
-
-    .thermometer-wrapper {
-
-        height: 600px;
-
-    }
-
-
-    .thermometer {
-
-        height: 560px;
-
-    }
-
-
-    .thermometer-scale {
-
-        height: 480px;
-
-        top: 40px;
-
-        left: calc(50% - 120px);
-
-    }
-
-
-    .thermometer::before {
-
-        height: 450px;
-
-        bottom: 60px;
-
-    }
-
-
-    .thermometer-fill {
-
-        bottom: 66px;
-
-    }
-
-
-    .vertical-slider {
-
-        height: 480px;
-
-        bottom: 50px;
-
-    }
-
-
-    .definitions {
-
-        display: none;
-
-    }
-
-
-    .current-value {
-
-        right: calc(50% - 170px);
+        gap: 25px;
 
     }
 
 
     .skills-card {
 
-        width: min(500px, 100%);
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        max-width: 500px;
 
         margin: 0 auto;
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .urge-page {
+
+        padding: 25px 15px 40px;
+
+    }
+
+
+    .thermometer-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .thermometer-section {
+
+        height: 620px;
+
+    }
+
+
+    .definitions {
+
+        height: auto;
+
+        gap: 15px;
+
+        padding: 0 10px;
+
+    }
+
+
+    .definition {
+
+        font-size: 14px;
+
+    }
+
+
+    .skills-card {
+
+        margin-top: 10px;
 
     }
 
