@@ -1,0 +1,679 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: #11111a;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.exercise-page {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 25px 20px 60px;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.back-button {
+
+    background: none;
+
+    border: none;
+
+    color: #aaaabd;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 8px 0;
+
+    margin-bottom: 30px;
+}
+
+
+.back-button:hover,
+.back-bottom:hover {
+
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.exercise-header {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.exercise-label {
+
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: #ff7043;
+
+    color: #11111a;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 18px;
+}
+
+
+.exercise-header h1 {
+
+    margin: 0;
+
+    font-size: clamp(45px, 9vw, 75px);
+
+    line-height: .9;
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+
+.exercise-header p {
+
+    max-width: 600px;
+
+    margin: 22px auto 0;
+
+    color: #aaaabd;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   GENERAL CARDS
+========================= */
+
+.exercise-card,
+.step-card,
+.try-card {
+
+    width: 100%;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.exercise-card {
+
+    background: #1a1a27;
+
+    border: 1px solid #29293a;
+}
+
+
+.step-card {
+
+    background: #1a1a27;
+
+    border: 1px solid #29293a;
+}
+
+
+.exercise-card h2 {
+
+    margin: 0 0 18px;
+
+    font-size: 21px;
+
+    font-weight: 900;
+}
+
+
+.exercise-card p,
+.step-card p {
+
+    color: #d2d2df;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin: 0 0 16px;
+}
+
+
+/* =========================
+   ACE SUMMARY
+========================= */
+
+.ace-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.ace-box {
+
+    padding: 20px 10px;
+
+    border-radius: 17px;
+
+    text-align: center;
+
+    color: #11111a;
+}
+
+
+.ace-box strong {
+
+    display: block;
+
+    font-size: 35px;
+
+    font-weight: 900;
+
+    margin-bottom: 5px;
+}
+
+
+.ace-box span {
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+}
+
+
+.ace-a {
+    background: #ff7043;
+}
+
+
+.ace-c {
+    background: #ffd54f;
+}
+
+
+.ace-e {
+    background: #64b5f6;
+}
+
+
+/* =========================
+   STEP HEADING
+========================= */
+
+.step-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+
+.step-letter {
+
+    flex: 0 0 55px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #11111a;
+
+    font-size: 27px;
+
+    font-weight: 900;
+}
+
+
+.step-heading h2 {
+
+    margin: 0;
+
+    font-size: 23px;
+
+    font-weight: 900;
+}
+
+
+.step-heading span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #aaaabd;
+
+    font-size: 13px;
+}
+
+
+.step-a {
+    background: #ff7043;
+}
+
+
+.step-c {
+    background: #ffd54f;
+}
+
+
+.step-e {
+    background: #64b5f6;
+}
+
+
+/* =========================
+   NOTICE BOX
+========================= */
+
+.notice-box {
+
+    margin: 22px 0;
+
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background: #29293a;
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+    text-align: center;
+}
+
+
+/* =========================
+   EXAMPLES
+========================= */
+
+.examples {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 9px;
+}
+
+
+.examples div {
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    background: #242435;
+
+    color: #cfcfdb;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   BODY OPTIONS
+========================= */
+
+.body-options,
+.engage-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+.body-options div,
+.engage-list div {
+
+    padding: 15px 17px;
+
+    border-radius: 13px;
+
+    background: #242435;
+
+    color: #d2d2df;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   IMPORTANT NOTE
+========================= */
+
+.important-note {
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    border-radius: 17px;
+
+    background: #252535;
+
+    border-left: 5px solid #ffd54f;
+}
+
+
+.important-note strong {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffd54f;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+.important-note p {
+
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TRY CARD
+========================= */
+
+.try-card {
+
+    background: linear-gradient(
+        135deg,
+        #ff7043,
+        #e53935
+    );
+
+    color: #11111a;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 35px rgba(229,57,53,.18);
+}
+
+
+.try-label {
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 10px;
+}
+
+
+.try-card h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    font-weight: 900;
+}
+
+
+.try-card > p {
+
+    margin: 10px 0 25px;
+
+    font-size: 14px;
+}
+
+
+.try-steps {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+}
+
+
+.try-step {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.2);
+}
+
+
+.try-step strong {
+
+    flex: 0 0 35px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255,255,255,.4);
+
+    font-size: 16px;
+}
+
+
+.try-step span {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+/* =========================
+   DONE BUTTON
+========================= */
+
+.done-button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #11111a;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: transform .15s ease;
+}
+
+
+.done-button:hover {
+
+    transform: scale(1.02);
+}
+
+
+.done-button:active {
+
+    transform: scale(.98);
+}
+
+
+/* =========================
+   BOTTOM BACK
+========================= */
+
+.back-bottom {
+
+    display: block;
+
+    margin: 25px auto 0;
+
+    background: none;
+
+    border: none;
+
+    color: #aaaabd;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 600px) {
+
+    .exercise-page {
+
+        padding: 18px 15px 45px;
+    }
+
+
+    .exercise-card,
+    .step-card,
+    .try-card {
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .ace-summary {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .examples {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .exercise-header h1 {
+
+        letter-spacing: -2px;
+    }
+
+}
