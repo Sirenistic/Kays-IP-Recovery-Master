@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Recovery Tool</title>
 
     <link rel="stylesheet" href="style.css">
@@ -15,10 +14,7 @@
 
 <main class="recovery-home">
 
-
-    <!-- =========================
-         URGE QUESTION
-    ========================= -->
+    <!-- URGE SECTION -->
 
     <section class="recovery-hero">
 
@@ -36,7 +32,6 @@
                 <span>I need help right now</span>
             </button>
 
-
             <button
                 class="recovery-choice recovery-no"
                 onclick="location.href='resources.html'"
@@ -50,39 +45,35 @@
     </section>
 
 
-
-    <!-- =========================
-         TRIGGERS
-    ========================= -->
+    <!-- TRIGGERS -->
 
     <section class="recovery-section">
 
         <button
             class="recovery-section-header"
-            onclick="toggleSection('triggersContent', this)"
+            onclick="toggleSection('triggers')"
         >
             <span>TRIGGERS</span>
-            <span class="recovery-arrow">+</span>
+            <span class="recovery-arrow" id="triggersArrow">+</span>
         </button>
 
 
         <div
             class="recovery-expandable"
-            id="triggersContent"
+            id="triggers"
         >
 
             <button
                 class="recovery-subheader internal-trigger"
-                onclick="toggleSection('internalContent', this)"
+                onclick="toggleSection('internal')"
             >
                 <span>INTERNAL</span>
                 <span>+</span>
             </button>
 
-
             <div
                 class="recovery-subcontent"
-                id="internalContent"
+                id="internal"
             >
 
                 <div class="trigger-item">
@@ -108,16 +99,15 @@
 
             <button
                 class="recovery-subheader external-trigger"
-                onclick="toggleSection('externalContent', this)"
+                onclick="toggleSection('external')"
             >
                 <span>EXTERNAL</span>
                 <span>+</span>
             </button>
 
-
             <div
                 class="recovery-subcontent"
-                id="externalContent"
+                id="external"
             >
 
                 <div class="trigger-item">
@@ -148,10 +138,7 @@
     </section>
 
 
-
-    <!-- =========================
-         FOUR X
-    ========================= -->
+    <!-- 4X -->
 
     <section class="recovery-section">
 
@@ -168,29 +155,10 @@
 
             <div class="recovery-input-list">
 
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="1."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="2."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="3."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="4."
-                >
+                <input class="recovery-input" type="text" placeholder="1.">
+                <input class="recovery-input" type="text" placeholder="2.">
+                <input class="recovery-input" type="text" placeholder="3.">
+                <input class="recovery-input" type="text" placeholder="4.">
 
             </div>
 
@@ -209,36 +177,17 @@
 
             <div class="recovery-input-list">
 
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="1."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="2."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="3."
-                >
-
-                <input
-                    class="recovery-input"
-                    type="text"
-                    placeholder="4."
-                >
+                <input class="recovery-input" type="text" placeholder="1.">
+                <input class="recovery-input" type="text" placeholder="2.">
+                <input class="recovery-input" type="text" placeholder="3.">
+                <input class="recovery-input" type="text" placeholder="4.">
 
             </div>
 
         </div>
 
 
-        <!-- CONTINGENCY -->
+        <!-- CONTINGENCY PLANS -->
 
         <div class="recovery-subsection">
 
@@ -272,37 +221,22 @@
 
     </section>
 
-
-
 </main>
 
 
 <script>
 
-function toggleSection(id, button) {
+function toggleSection(id) {
 
     const section = document.getElementById(id);
 
     section.classList.toggle("open");
 
-    const arrow = button.querySelector(
-        ".recovery-arrow"
-    );
-
-    if (arrow) {
-
-        arrow.textContent =
-            section.classList.contains("open")
-                ? "−"
-                : "+";
-
-    }
-
 }
 
 </script>
 
-
 </body>
+
 </html>
 ```
