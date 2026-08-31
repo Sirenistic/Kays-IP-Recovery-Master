@@ -1,125 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urge Check-In</title>
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Distress Thermometer</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <main class="urge-page">
+<main class="urge-page">
 
-        <div class="icon">🌡️</div>
+    <div class="icon">🌡️</div>
 
-        <h1>HOW STRONG<br>IS THE URGE?</h1>
+    <h1>HOW DISTRESSED<br>ARE YOU?</h1>
 
-        <p class="subtitle">
-            Drag the thermometer.
-        </p>
+    <p class="subtitle">
+        Move the thermometer to where you are right now.
+    </p>
 
-        <div class="thermometer-area">
+
+    <div class="thermometer-layout">
+
+
+        <!-- THERMOMETER -->
+
+        <div class="thermometer-wrapper">
+
+            <div class="thermometer-scale">
+
+                <span>100</span>
+                <span>90</span>
+                <span>80</span>
+                <span>70</span>
+                <span>60</span>
+                <span>50</span>
+                <span>40</span>
+                <span>30</span>
+                <span>20</span>
+                <span>10</span>
+                <span>0</span>
+
+            </div>
+
 
             <div class="thermometer">
 
-                <div class="thermometer-tube">
-                    <div class="thermometer-fill" id="thermometerFill"></div>
+                <div
+                    class="thermometer-fill"
+                    id="thermometerFill"
+                ></div>
 
-                    <div class="thermometer-scale">
-                        <span>10</span>
-                        <span>9</span>
-                        <span>8</span>
-                        <span>7</span>
-                        <span>6</span>
-                        <span>5</span>
-                        <span>4</span>
-                        <span>3</span>
-                        <span>2</span>
-                        <span>1</span>
-                    </div>
 
-                    <input
-                        type="range"
-                        min="1"
-                        max="10"
-                        value="5"
-                        class="vertical-slider"
-                        id="urgeSlider"
-                    >
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="40"
+                    step="10"
+                    class="vertical-slider"
+                    id="urgeSlider"
+                >
 
-                </div>
 
                 <div class="thermometer-bulb"></div>
 
             </div>
 
-            <div class="urge-reading">
-                <div class="urge-number" id="urgeNumber">5</div>
-                <div class="urge-out-of">/ 10</div>
+
+            <!-- CURRENT VALUE -->
+
+            <div class="current-value">
+
+                <strong id="urgeNumber">40</strong>
+
+                <span>%</span>
+
             </div>
 
         </div>
 
-        <p class="urge-message" id="urgeMessage">
-            The urge is noticeable. Let's give you some space from it.
-        </p>
 
-        <button class="continue-button" onclick="location.href='tools.html'">
-            SHOW ME WHAT TO DO →
+
+        <!-- DEFINITIONS -->
+
+        <div class="definitions" id="definitions">
+
+            <div class="definition">
+                <strong>100</strong>
+                <span>
+                    Highest level of distress.
+                    Feeling out of control.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>90</strong>
+                <span>
+                    Extremely distressed.
+                    Physiological symptoms are present.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>80</strong>
+                <span>
+                    Very distressed; can't concentrate.
+                    Physiological symptoms are present.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>70</strong>
+                <span>
+                    Quite distressed; losing focus.
+                    Physiological symptoms are present.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>60</strong>
+                <span>
+                    Moderate to strong distress/anxiety.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>50</strong>
+                <span>
+                    Moderate distress/anxiety.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>40</strong>
+                <span>
+                    Mild to moderate distress/anxiety.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>30</strong>
+                <span>
+                    Mild distress/anxiety;
+                    no interference with functioning.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>20</strong>
+                <span>
+                    Minimal distress/anxiety.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>10</strong>
+                <span>
+                    Alert, focused, concentrating.
+                </span>
+            </div>
+
+            <div class="definition">
+                <strong>0</strong>
+                <span>
+                    No distress, relaxed, calm.
+                </span>
+            </div>
+
+        </div>
+
+
+
+        <!-- SKILLS -->
+
+        <button
+            class="skills-card"
+            id="skillsCard"
+            onclick="location.href='tools.html'"
+        >
+
+            <div class="skills-label">
+                SKILLS I CAN USE AT THIS LEVEL
+            </div>
+
+            <div
+                class="skills-level"
+                id="skillsLevel"
+            >
+                40
+            </div>
+
+            <div
+                class="skills-list"
+                id="skillsList"
+            >
+                Observe<br>
+                Full Participation
+            </div>
+
+            <div class="skills-action">
+                VIEW THESE EXERCISES →
+            </div>
+
         </button>
 
-        <button class="back-button" onclick="location.href='index.html'">
-            ← BACK
-        </button>
+    </div>
 
-    </main>
 
-    <script>
+    <button
+        class="back-button"
+        onclick="location.href='index.html'"
+    >
+        ← BACK
+    </button>
 
-        const slider = document.getElementById("urgeSlider");
-        const number = document.getElementById("urgeNumber");
-        const message = document.getElementById("urgeMessage");
-        const fill = document.getElementById("thermometerFill");
 
-        function updateThermometer() {
+</main>
 
-            const value = Number(slider.value);
 
-            number.textContent = value;
 
-            const percentage = ((value - 1) / 9) * 100;
+<script>
 
-            fill.style.height = percentage + "%";
+const slider = document.getElementById("urgeSlider");
 
-            if (value <= 3) {
+const number = document.getElementById("urgeNumber");
 
-                message.textContent =
-                    "It's there, but you have plenty of room to choose.";
+const fill = document.getElementById("thermometerFill");
 
-            } else if (value <= 6) {
+const skillsCard = document.getElementById("skillsCard");
 
-                message.textContent =
-                    "The urge is noticeable. Let's give you some space from it.";
+const skillsLevel = document.getElementById("skillsLevel");
 
-            } else if (value <= 8) {
+const skillsList = document.getElementById("skillsList");
 
-                message.textContent =
-                    "Strong urge. Let's interrupt the cycle before it takes over.";
 
-            } else {
+const skills = {
 
-                message.textContent =
-                    "Very strong urge. Let's get you through the next few minutes.";
+    0: "No skills needed<br>You're calm",
 
-            }
-        }
+    10: "Stay focused<br>Continue what you're doing",
 
-        slider.addEventListener("input", updateThermometer);
+    20: "Observe<br>Notice what's happening",
 
-        updateThermometer();
+    30: "Observe<br>Full Participation",
 
-    </script>
+    40: "Observe<br>Full Participation",
+
+    50: "G.L.A.D<br>Urge Surfing",
+
+    60: "Breathing Exercise<br>Thought Log",
+
+    70: "Notice, Name, Make Room",
+
+    80: "Drop Anchor<br>LIKE • ACE",
+
+    90: "S.T.O.P<br>5-5-5",
+
+    100: "T.I.P.P"
+
+};
+
+
+function updateThermometer() {
+
+    const value = Number(slider.value);
+
+    number.textContent = value;
+
+    skillsLevel.textContent = value;
+
+    skillsList.innerHTML = skills[value];
+
+
+    /* Fill thermometer */
+
+    fill.style.height = value + "%";
+
+
+    /* Change colour */
+
+    if (value <= 20) {
+
+        skillsCard.className = "skills-card level-calm";
+
+    }
+
+    else if (value <= 40) {
+
+        skillsCard.className = "skills-card level-blue";
+
+    }
+
+    else if (value <= 60) {
+
+        skillsCard.className = "skills-card level-yellow";
+
+    }
+
+    else if (value <= 80) {
+
+        skillsCard.className = "skills-card level-orange";
+
+    }
+
+    else {
+
+        skillsCard.className = "skills-card level-red";
+
+    }
+
+}
+
+
+slider.addEventListener(
+    "input",
+    updateThermometer
+);
+
+
+updateThermometer();
+
+</script>
+
 
 </body>
+
 </html>
