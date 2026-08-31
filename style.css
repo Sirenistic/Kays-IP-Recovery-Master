@@ -50,22 +50,26 @@ body {
 
 /* =========================
    MAIN LAYOUT
+
+   THERMOMETER
+   DEFINITIONS
+   SKILLS
 ========================= */
 
 .thermometer-layout {
 
-    width: min(1120px, 100%);
+    width: min(1080px, 100%);
 
     margin: 0 auto;
 
     display: grid;
 
     grid-template-columns:
-        250px
-        minmax(420px, 1fr)
-        280px;
+        220px
+        440px
+        270px;
 
-    gap: 18px;
+    gap: 15px;
 
     align-items: center;
 
@@ -93,7 +97,7 @@ body {
 
     position: relative;
 
-    width: 210px;
+    width: 200px;
 
     height: 600px;
 
@@ -101,7 +105,7 @@ body {
 
 
 /* =========================
-   LEFT NUMBERS
+   NUMBERS ON LEFT
 ========================= */
 
 .thermometer-numbers {
@@ -112,7 +116,7 @@ body {
 
     top: 25px;
 
-    width: 55px;
+    width: 50px;
 
     height: 500px;
 
@@ -124,7 +128,7 @@ body {
 
     align-items: flex-end;
 
-    padding-right: 12px;
+    padding-right: 10px;
 
     font-size: 17px;
 
@@ -141,7 +145,7 @@ body {
 
     position: absolute;
 
-    left: 75px;
+    left: 65px;
 
     top: 0;
 
@@ -174,11 +178,15 @@ body {
 
     border: 4px solid #666678;
 
+    box-shadow:
+        inset 0 0 12px rgba(0,0,0,0.35),
+        0 8px 25px rgba(0,0,0,0.35);
+
 }
 
 
 /* =========================
-   SEGMENTS
+   COLOUR SEGMENTS
 ========================= */
 
 .segment {
@@ -192,7 +200,7 @@ body {
 }
 
 
-/* TOP */
+/* RED */
 
 .s100 {
     background: #e53935;
@@ -201,6 +209,9 @@ body {
 .s90 {
     background: #ef5350;
 }
+
+
+/* ORANGE */
 
 .s80 {
     background: #ff7043;
@@ -241,7 +252,7 @@ body {
 }
 
 
-/* BOTTOM */
+/* LIGHT GREEN / WHITE */
 
 .s0 {
     background: #f4fff4;
@@ -347,7 +358,7 @@ body {
 
     left: 95px;
 
-    top: 230px;
+    bottom: calc(40% + 70px);
 
     width: 0;
 
@@ -362,13 +373,9 @@ body {
     filter:
         drop-shadow(0 2px 4px black);
 
-    transform: translateY(-50%);
+    pointer-events: none;
 
-    cursor: ns-resize;
-
-    pointer-events: auto;
-
-    transition: top 0.1s ease;
+    transition: bottom 0.1s ease;
 
 }
 
@@ -392,13 +399,15 @@ body {
 }
 
 
+/* ONE ROW */
+
 .definition {
 
     display: flex;
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
     min-height: 40px;
 
@@ -411,15 +420,17 @@ body {
 }
 
 
-/* COLOURED NUMBER CIRCLE */
+/* =========================
+   SMALL COLOURED CIRCLES
+========================= */
 
 .definition strong {
 
     flex-shrink: 0;
 
-    width: 40px;
+    width: 38px;
 
-    height: 40px;
+    height: 38px;
 
     border-radius: 50%;
 
@@ -429,7 +440,7 @@ body {
 
     justify-content: center;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 900;
 
@@ -438,7 +449,7 @@ body {
 }
 
 
-/* MATCHING COLOURS */
+/* MATCH THERMOMETER COLOURS */
 
 .level-100 strong {
     background: #e53935;
@@ -486,7 +497,7 @@ body {
 
 
 /* =========================
-   SKILLS
+   SKILLS CARD
 ========================= */
 
 .skills-card {
@@ -555,7 +566,7 @@ body {
 }
 
 
-/* SKILL COLOURS */
+/* SKILLS COLOURS */
 
 .skill-blue {
     background: #64b5f6;
@@ -594,18 +605,18 @@ body {
 
 
 /* =========================
-   MOBILE
+   SMALLER SCREENS
 ========================= */
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
 
     .thermometer-layout {
 
         grid-template-columns:
-            230px
+            210px
             1fr;
 
-        max-width: 750px;
+        max-width: 760px;
 
     }
 
