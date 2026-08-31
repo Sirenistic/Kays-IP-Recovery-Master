@@ -1,37 +1,506 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Recovery Tool</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-    <main class="home">
+<main class="home">
 
-        <div class="icon">🧠</div>
+
+    <!-- =========================
+         URGE SECTION
+    ========================= -->
+
+    <section class="urge-section">
+
+        <div class="icon"></div>
 
         <h1>HAVING<br>AN URGE?</h1>
 
-        <p class="subtitle">Take a moment. You have options.</p>
+        <p class="subtitle">
+            Take a moment. You have options.
+        </p>
+
 
         <div class="buttons">
 
-            <button class="choice yes" onclick="location.href='urge.html'">
+            <button
+                class="choice yes"
+                onclick="location.href='urge.html'"
+            >
+
                 <span>YES</span>
-                <small>I need help right now</small>
+
+                <small>
+                    I need help right now
+                </small>
+
             </button>
 
-            <button class="choice no" onclick="location.href='resources.html'">
+
+            <button
+                class="choice no"
+                onclick="location.href='resources.html'"
+            >
+
                 <span>NO</span>
-                <small>Take me to my resources</small>
+
+                <small>
+                    Take me to my resources
+                </small>
+
             </button>
 
         </div>
 
-    </main>
+    </section>
+
+
+
+    <!-- =========================
+         TRIGGERS
+    ========================= -->
+
+    <section class="dashboard-section">
+
+        <button
+            class="section-header"
+            onclick="toggleSection('triggers')"
+        >
+
+            <span>TRIGGERS</span>
+
+            <span
+                class="section-arrow"
+                id="triggers-arrow"
+            >
+                +
+            </span>
+
+        </button>
+
+
+        <div
+            class="section-content"
+            id="triggers"
+        >
+
+
+            <!-- INTERNAL -->
+
+            <button
+                class="subsection-header internal-header"
+                onclick="toggleSection('internal')"
+            >
+
+                <span>INTERNAL</span>
+
+                <span
+                    class="subsection-arrow"
+                    id="internal-arrow"
+                >
+                    +
+                </span>
+
+            </button>
+
+
+            <div
+                class="subsection-content"
+                id="internal"
+            >
+
+                <div class="trigger-item">
+                    Low mood / "dopamine deficit"
+                </div>
+
+                <div class="trigger-item">
+                    Excitement and anticipation
+                </div>
+
+                <div class="trigger-item">
+                    Physical sensations: chest tightness, adrenaline,
+                    stiffness in hands, brain fog, stuttered breathing,
+                    quickened heart rate
+                </div>
+
+                <div class="trigger-item">
+                    Guilt and shame (anticipatory)
+                </div>
+
+            </div>
+
+
+
+            <!-- EXTERNAL -->
+
+            <button
+                class="subsection-header external-header"
+                onclick="toggleSection('external')"
+            >
+
+                <span>EXTERNAL</span>
+
+                <span
+                    class="subsection-arrow"
+                    id="external-arrow"
+                >
+                    +
+                </span>
+
+            </button>
+
+
+            <div
+                class="subsection-content"
+                id="external"
+            >
+
+                <div class="trigger-item">
+                    Being alone or knowing someone is leaving the house
+                </div>
+
+                <div class="trigger-item">
+                    Boredom
+                </div>
+
+                <div class="trigger-item">
+                    Sexual imagery (including social media)
+                </div>
+
+                <div class="trigger-item">
+                    Locations: bathroom (including at work), car in
+                    secluded car parks, bedroom, shower
+                </div>
+
+                <div class="trigger-item">
+                    Writing (requires solitude, increases vulnerability)
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ACCOUNTABILITY
+    ========================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-title">
+            1. ACCOUNTABILITY PARTNERS
+        </div>
+
+        <p class="section-description">
+            Who can I reach out to?
+        </p>
+
+
+        <div class="input-list">
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="1. Accountability partner"
+                data-save="partner1"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="2. Accountability partner"
+                data-save="partner2"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="3. Accountability partner"
+                data-save="partner3"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="4. Accountability partner"
+                data-save="partner4"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MOTIVATION
+    ========================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-title">
+            2. FOUR REASONS WHY
+        </div>
+
+        <p class="section-description">
+            Why do I want to change this behaviour?
+        </p>
+
+
+        <div class="input-list">
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="1."
+                data-save="reason1"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="2."
+                data-save="reason2"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="3."
+                data-save="reason3"
+            >
+
+            <input
+                type="text"
+                class="personal-input"
+                placeholder="4."
+                data-save="reason4"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTINGENCY PLANS
+    ========================= -->
+
+    <section class="dashboard-section">
+
+        <div class="section-title">
+            3. CONTINGENCY PLANS
+        </div>
+
+        <p class="section-description">
+            Choose the exercise for your current level.
+        </p>
+
+
+        <div class="contingency-grid">
+
+
+            <button
+                class="contingency-button level-blue"
+                onclick="location.href='observe.html'"
+            >
+                <strong>40</strong>
+                <span>Observe</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-yellow"
+                onclick="location.href='glad.html'"
+            >
+                <strong>50</strong>
+                <span>G.L.A.D</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-yellow"
+                onclick="location.href='breathing.html'"
+            >
+                <strong>60</strong>
+                <span>Breathing Exercise</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-orange"
+                onclick="location.href='notice-name-make-room.html'"
+            >
+                <strong>70</strong>
+                <span>Notice, Name, Make Room</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-orange"
+                onclick="location.href='drop-anchor.html'"
+            >
+                <strong>80</strong>
+                <span>Drop Anchor</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-red"
+                onclick="location.href='stop.html'"
+            >
+                <strong>90</strong>
+                <span>S.T.O.P</span>
+            </button>
+
+
+            <button
+                class="contingency-button level-red"
+                onclick="location.href='tipp.html'"
+            >
+                <strong>100</strong>
+                <span>T.I.P.P</span>
+            </button>
+
+        </div>
+
+
+        <div class="timer-box">
+
+            <div class="timer-number">
+                14
+            </div>
+
+            <div class="timer-label">
+                MINUTES
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOUR WEEKS
+    ========================= -->
+
+    <section class="dashboard-section four-weeks">
+
+        <div class="section-title">
+            4. FOUR WEEKS
+        </div>
+
+        <p class="four-weeks-text">
+            Four weeks to form a new habit.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<script>
+
+/* =========================
+   EXPAND / COLLAPSE
+========================= */
+
+function toggleSection(id) {
+
+    const section =
+        document.getElementById(id);
+
+    const arrow =
+        document.getElementById(id + "-arrow");
+
+
+    if (section.classList.contains("open")) {
+
+        section.classList.remove("open");
+
+        if (arrow) {
+            arrow.textContent = "+";
+        }
+
+    }
+
+    else {
+
+        section.classList.add("open");
+
+        if (arrow) {
+            arrow.textContent = "−";
+        }
+
+    }
+
+}
+
+
+
+/* =========================
+   SAVE PERSONAL INFORMATION
+========================= */
+
+const inputs =
+    document.querySelectorAll(
+        "[data-save]"
+    );
+
+
+inputs.forEach(input => {
+
+    const key =
+        input.dataset.save;
+
+
+    const saved =
+        localStorage.getItem(key);
+
+
+    if (saved !== null) {
+
+        input.value = saved;
+
+    }
+
+
+    input.addEventListener(
+        "input",
+        function() {
+
+            localStorage.setItem(
+                key,
+                input.value
+            );
+
+        }
+    );
+
+});
+
+</script>
+
 
 </body>
+
 </html>
+```
