@@ -6,9 +6,13 @@
 
 body {
     margin: 0;
+
     min-height: 100vh;
+
     background: #11111a;
+
     color: white;
+
     font-family: Arial, sans-serif;
 }
 
@@ -18,34 +22,45 @@ body {
 ========================= */
 
 .urge-page {
+
     min-height: 100vh;
+
     padding: 40px 20px 45px;
+
     text-align: center;
 }
 
 
 .urge-page h1 {
+
     margin: 0;
+
     font-size: clamp(38px, 6vw, 65px);
+
     line-height: 1;
 }
 
 
 .subtitle {
+
     margin: 15px 0 35px;
+
     color: #aaaabd;
+
     font-size: 17px;
 }
 
 
 /* =========================
-   MAIN LAYOUT
+   LAYOUT
 ========================= */
 
 .thermometer-layout {
 
     width: 100%;
+
     max-width: 1100px;
+
     margin: 0 auto;
 
     display: grid;
@@ -88,7 +103,7 @@ body {
 
 
 /* =========================
-   LEFT NUMBERS
+   NUMBERS
 ========================= */
 
 .thermometer-numbers {
@@ -138,7 +153,7 @@ body {
 
 
 /* =========================
-   COLOURED TUBE
+   TUBE
 ========================= */
 
 .tube {
@@ -170,7 +185,7 @@ body {
 
     width: 100%;
 
-    height: 45.45px;
+    height: calc(500px / 11);
 
     border-bottom:
         2px solid rgba(0,0,0,.18);
@@ -178,7 +193,7 @@ body {
 
 
 /* =========================
-   THERMOMETER COLOURS
+   COLOURS
 ========================= */
 
 .s100 {
@@ -222,7 +237,9 @@ body {
 }
 
 .s0 {
+
     background: #f4fff4;
+
     border-bottom: none;
 }
 
@@ -308,7 +325,7 @@ body {
 
 
 /* =========================
-   TRIANGLE
+   TRIANGLE POINTER
 ========================= */
 
 .pointer {
@@ -319,7 +336,7 @@ body {
 
     left: 95px;
 
-    bottom: calc(40% + 70px);
+    bottom: 256px;
 
     width: 0;
 
@@ -380,6 +397,8 @@ body {
 }
 
 
+/* NUMBER CIRCLES */
+
 .definition strong {
 
     flex: 0 0 38px;
@@ -404,9 +423,7 @@ body {
 }
 
 
-/* =========================
-   DEFINITION COLOURS
-========================= */
+/* MATCH COLOURS */
 
 .level-100 strong {
     background: #e53935;
@@ -518,7 +535,7 @@ body {
 
 
 /* =========================
-   SKILL NAMES
+   SKILLS
 ========================= */
 
 .skills-list {
@@ -582,7 +599,7 @@ body {
 
 
 /* =========================
-   BACK BUTTON
+   BACK
 ========================= */
 
 .back-button {
