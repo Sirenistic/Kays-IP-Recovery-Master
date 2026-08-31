@@ -11,54 +11,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-<main class="home">
+<main class="recovery-home">
 
 
     <!-- =========================
-         URGE SECTION
+         URGE QUESTION
     ========================= -->
 
-    <section class="urge-section">
-
-        <div class="icon"></div>
+    <section class="recovery-hero">
 
         <h1>HAVING<br>AN URGE?</h1>
 
-        <p class="subtitle">
-            Take a moment. You have options.
-        </p>
+        <p>Take a moment. You have options.</p>
 
-
-        <div class="buttons">
+        <div class="recovery-choice-buttons">
 
             <button
-                class="choice yes"
+                class="recovery-choice recovery-yes"
                 onclick="location.href='urge.html'"
             >
-
-                <span>YES</span>
-
-                <small>
-                    I need help right now
-                </small>
-
+                <strong>YES</strong>
+                <span>I need help right now</span>
             </button>
 
 
             <button
-                class="choice no"
+                class="recovery-choice recovery-no"
                 onclick="location.href='resources.html'"
             >
-
-                <span>NO</span>
-
-                <small>
-                    Take me to my resources
-                </small>
-
+                <strong>NO</strong>
+                <span>Take me to my resources</span>
             </button>
 
         </div>
@@ -71,53 +55,34 @@
          TRIGGERS
     ========================= -->
 
-    <section class="dashboard-section">
+    <section class="recovery-section">
 
         <button
-            class="section-header"
-            onclick="toggleSection('triggers')"
+            class="recovery-section-header"
+            onclick="toggleSection('triggersContent', this)"
         >
-
             <span>TRIGGERS</span>
-
-            <span
-                class="section-arrow"
-                id="triggers-arrow"
-            >
-                +
-            </span>
-
+            <span class="recovery-arrow">+</span>
         </button>
 
 
         <div
-            class="section-content"
-            id="triggers"
+            class="recovery-expandable"
+            id="triggersContent"
         >
 
-
-            <!-- INTERNAL -->
-
             <button
-                class="subsection-header internal-header"
-                onclick="toggleSection('internal')"
+                class="recovery-subheader internal-trigger"
+                onclick="toggleSection('internalContent', this)"
             >
-
                 <span>INTERNAL</span>
-
-                <span
-                    class="subsection-arrow"
-                    id="internal-arrow"
-                >
-                    +
-                </span>
-
+                <span>+</span>
             </button>
 
 
             <div
-                class="subsection-content"
-                id="internal"
+                class="recovery-subcontent"
+                id="internalContent"
             >
 
                 <div class="trigger-item">
@@ -141,29 +106,18 @@
             </div>
 
 
-
-            <!-- EXTERNAL -->
-
             <button
-                class="subsection-header external-header"
-                onclick="toggleSection('external')"
+                class="recovery-subheader external-trigger"
+                onclick="toggleSection('externalContent', this)"
             >
-
                 <span>EXTERNAL</span>
-
-                <span
-                    class="subsection-arrow"
-                    id="external-arrow"
-                >
-                    +
-                </span>
-
+                <span>+</span>
             </button>
 
 
             <div
-                class="subsection-content"
-                id="external"
+                class="recovery-subcontent"
+                id="externalContent"
             >
 
                 <div class="trigger-item">
@@ -196,311 +150,159 @@
 
 
     <!-- =========================
-         ACCOUNTABILITY
+         FOUR X
     ========================= -->
 
-    <section class="dashboard-section">
+    <section class="recovery-section">
 
-        <div class="section-title">
-            1. ACCOUNTABILITY PARTNERS
-        </div>
-
-        <p class="section-description">
-            Who can I reach out to?
-        </p>
-
-
-        <div class="input-list">
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="1. Accountability partner"
-                data-save="partner1"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="2. Accountability partner"
-                data-save="partner2"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="3. Accountability partner"
-                data-save="partner3"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="4. Accountability partner"
-                data-save="partner4"
-            >
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         MOTIVATION
-    ========================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-title">
-            2. FOUR REASONS WHY
-        </div>
-
-        <p class="section-description">
-            Why do I want to change this behaviour?
-        </p>
-
-
-        <div class="input-list">
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="1."
-                data-save="reason1"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="2."
-                data-save="reason2"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="3."
-                data-save="reason3"
-            >
-
-            <input
-                type="text"
-                class="personal-input"
-                placeholder="4."
-                data-save="reason4"
-            >
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         CONTINGENCY PLANS
-    ========================= -->
-
-    <section class="dashboard-section">
-
-        <div class="section-title">
-            3. CONTINGENCY PLANS
-        </div>
-
-        <p class="section-description">
-            Choose the exercise for your current level.
-        </p>
-
-
-        <div class="contingency-grid">
-
-
-            <button
-                class="contingency-button level-blue"
-                onclick="location.href='observe.html'"
-            >
-                <strong>40</strong>
-                <span>Observe</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-yellow"
-                onclick="location.href='glad.html'"
-            >
-                <strong>50</strong>
-                <span>G.L.A.D</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-yellow"
-                onclick="location.href='breathing.html'"
-            >
-                <strong>60</strong>
-                <span>Breathing Exercise</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-orange"
-                onclick="location.href='notice-name-make-room.html'"
-            >
-                <strong>70</strong>
-                <span>Notice, Name, Make Room</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-orange"
-                onclick="location.href='drop-anchor.html'"
-            >
-                <strong>80</strong>
-                <span>Drop Anchor</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-red"
-                onclick="location.href='stop.html'"
-            >
-                <strong>90</strong>
-                <span>S.T.O.P</span>
-            </button>
-
-
-            <button
-                class="contingency-button level-red"
-                onclick="location.href='tipp.html'"
-            >
-                <strong>100</strong>
-                <span>T.I.P.P</span>
-            </button>
-
+        <div class="recovery-section-title">
+            4X
         </div>
 
 
-        <div class="timer-box">
+        <!-- ACCOUNTABILITY -->
 
-            <div class="timer-number">
-                14
-            </div>
+        <div class="recovery-subsection">
 
-            <div class="timer-label">
-                MINUTES
+            <h2>1. ACCOUNTABILITY PARTNERS</h2>
+
+            <div class="recovery-input-list">
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="1."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="2."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="3."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="4."
+                >
+
             </div>
 
         </div>
 
-    </section>
 
+        <!-- MOTIVATION -->
 
+        <div class="recovery-subsection">
 
-    <!-- =========================
-         FOUR WEEKS
-    ========================= -->
+            <h2>2. FOUR REASONS WHY</h2>
 
-    <section class="dashboard-section four-weeks">
+            <p class="recovery-help-text">
+                My reasons for changing this behaviour:
+            </p>
 
-        <div class="section-title">
-            4. FOUR WEEKS
+            <div class="recovery-input-list">
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="1."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="2."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="3."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="4."
+                >
+
+            </div>
+
         </div>
 
-        <p class="four-weeks-text">
-            Four weeks to form a new habit.
-        </p>
+
+        <!-- CONTINGENCY -->
+
+        <div class="recovery-subsection">
+
+            <h2>3. CONTINGENCY PLANS</h2>
+
+            <p class="recovery-help-text">
+                Choose a skill to use when an urge hits. Give yourself 14 minutes.
+            </p>
+
+            <button
+                class="recovery-thermometer-link"
+                onclick="location.href='urge.html'"
+            >
+                OPEN DISTRESS THERMOMETER
+            </button>
+
+        </div>
+
+
+        <!-- FOUR WEEKS -->
+
+        <div class="recovery-subsection">
+
+            <h2>4. FOUR WEEKS</h2>
+
+            <p class="recovery-four-weeks">
+                Four weeks to form a new habit.
+            </p>
+
+        </div>
 
     </section>
+
 
 
 </main>
 
 
-
 <script>
 
-/* =========================
-   EXPAND / COLLAPSE
-========================= */
+function toggleSection(id, button) {
 
-function toggleSection(id) {
+    const section = document.getElementById(id);
 
-    const section =
-        document.getElementById(id);
+    section.classList.toggle("open");
 
-    const arrow =
-        document.getElementById(id + "-arrow");
+    const arrow = button.querySelector(
+        ".recovery-arrow"
+    );
 
+    if (arrow) {
 
-    if (section.classList.contains("open")) {
-
-        section.classList.remove("open");
-
-        if (arrow) {
-            arrow.textContent = "+";
-        }
-
-    }
-
-    else {
-
-        section.classList.add("open");
-
-        if (arrow) {
-            arrow.textContent = "−";
-        }
+        arrow.textContent =
+            section.classList.contains("open")
+                ? "−"
+                : "+";
 
     }
 
 }
 
-
-
-/* =========================
-   SAVE PERSONAL INFORMATION
-========================= */
-
-const inputs =
-    document.querySelectorAll(
-        "[data-save]"
-    );
-
-
-inputs.forEach(input => {
-
-    const key =
-        input.dataset.save;
-
-
-    const saved =
-        localStorage.getItem(key);
-
-
-    if (saved !== null) {
-
-        input.value = saved;
-
-    }
-
-
-    input.addEventListener(
-        "input",
-        function() {
-
-            localStorage.setItem(
-                key,
-                input.value
-            );
-
-        }
-    );
-
-});
-
 </script>
 
 
 </body>
-
 </html>
 ```
