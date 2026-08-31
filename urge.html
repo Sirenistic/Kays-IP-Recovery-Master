@@ -202,7 +202,7 @@
         class="back-button"
         onclick="location.href='index.html'"
     >
-        ← BACK
+        BACK
     </button>
 
 </main>
@@ -224,9 +224,9 @@ const skillsCard =
     document.getElementById("skillsCard");
 
 
-/* =========================
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 const skills = {
 
@@ -239,81 +239,65 @@ const skills = {
     30: [],
 
     40: [
-        "Observe",
-        "Full Participation"
+        ["Observe", "observe.html"],
+        ["Full Participation", "full-participation.html"]
     ],
 
     50: [
-        "G.L.A.D",
-        "Urge Surfing"
+        ["G.L.A.D.", "glad.html"],
+        ["Urge Surfing", "urge-surfing.html"]
     ],
 
     60: [
-        "Breathing Exercise",
-        "Thought Log"
+        ["Breathing Exercise", "breathing.html"],
+        ["Thought Log", "thought-log.html"]
     ],
 
     70: [
-        "Notice, Name, Make Room"
+        ["Notice, Name, Make Room", "notice-name-make-room.html"]
     ],
 
     80: [
-        "Drop Anchor",
-        "ACE"
+        ["Drop Anchor", "drop-anchor.html"],
+        ["ACE", "ace.html"]
     ],
 
     90: [
-        "S.T.O.P",
-        "5-5-5"
+        ["S.T.O.P.", "stop.html"],
+        ["5-5-5", "five-five-five.html"]
     ],
 
     100: [
-        "T.I.P.P"
+        ["T.I.P.P.", "tipp.html"]
     ]
 
 };
 
 
-/* =========================
+/* =========================================================
    POINTER POSITIONS
-========================= */
-
-/*
-   These positions correspond directly
-   to the centre of each thermometer
-   segment.
-*/
+========================================================= */
 
 const pointerPositions = {
 
     0: 75,
-
     10: 120,
-
     20: 165,
-
     30: 211,
-
     40: 256,
-
     50: 302,
-
     60: 347,
-
     70: 393,
-
     80: 438,
-
     90: 484,
-
     100: 529
 
 };
 
 
-/* =========================
+/* =========================================================
    UPDATE
-========================= */
+========================================================= */
 
 function update() {
 
@@ -321,18 +305,12 @@ function update() {
         Number(slider.value);
 
 
-    /* MOVE TRIANGLE */
-
     pointer.style.bottom =
         pointerPositions[value] + "px";
 
 
-    /* CLEAR SKILLS */
-
     skillsList.innerHTML = "";
 
-
-    /* ADD SKILLS */
 
     skills[value].forEach(skill => {
 
@@ -343,14 +321,24 @@ function update() {
             "skill-button";
 
         skillName.textContent =
-            skill;
+            skill[0];
+
+        skillName.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                window.location.href =
+                    skill[1];
+
+            }
+        );
 
         skillsList.appendChild(skillName);
 
     });
 
-
-    /* CHANGE CARD COLOUR */
 
     skillsCard.className =
         "skills-card";
@@ -391,20 +379,15 @@ function update() {
 }
 
 
-/* SLIDER */
-
 slider.addEventListener(
     "input",
     update
 );
 
 
-/* INITIAL STATE */
-
 update();
 
 </script>
-
 
 </body>
 
