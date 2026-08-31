@@ -3,58 +3,103 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Recovery Tool</title>
 
-<link rel="stylesheet" href="home.css">
+    <link
+        rel="stylesheet"
+        href="home.css"
+    >
+
 </head>
+
 
 <body>
 
 <main class="recovery-home">
 
-    <!-- URGE SECTION -->
+
+    <!-- =====================================================
+         URGE SECTION
+    ====================================================== -->
 
     <section class="recovery-hero">
 
-        <h1>HAVING<br>AN URGE?</h1>
+        <h1>
+            HAVING<br>
+            AN URGE?
+        </h1>
 
-        <p>Take a moment. You have options.</p>
+        <p>
+            Take a moment. You have options.
+        </p>
+
 
         <div class="recovery-choice-buttons">
+
 
             <button
                 class="recovery-choice recovery-yes"
                 onclick="location.href='urge.html'"
             >
+
                 <strong>YES</strong>
-                <span>I need help right now</span>
+
+                <span>
+                    I need help right now
+                </span>
+
             </button>
+
 
             <button
                 class="recovery-choice recovery-no"
                 onclick="location.href='resources.html'"
             >
+
                 <strong>NO</strong>
-                <span>Take me to my resources</span>
+
+                <span>
+                    Take me to my resources
+                </span>
+
             </button>
+
 
         </div>
 
     </section>
 
 
-    <!-- TRIGGERS -->
+
+    <!-- =====================================================
+         TRIGGERS
+    ====================================================== -->
 
     <section class="recovery-section">
 
+
         <button
             class="recovery-section-header"
-            onclick="toggleSection('triggers')"
+            onclick="toggleSection('triggers', 'triggersArrow')"
         >
+
             <span>TRIGGERS</span>
-            <span class="recovery-arrow" id="triggersArrow">+</span>
+
+            <span
+                class="recovery-arrow"
+                id="triggersArrow"
+            >
+                +
+            </span>
+
         </button>
 
 
@@ -63,13 +108,20 @@
             id="triggers"
         >
 
+
+            <!-- INTERNAL -->
+
             <button
                 class="recovery-subheader internal-trigger"
-                onclick="toggleSection('internal')"
+                onclick="toggleSection('internal', 'internalArrow')"
             >
+
                 <span>INTERNAL</span>
-                <span>+</span>
+
+                <span id="internalArrow">+</span>
+
             </button>
+
 
             <div
                 class="recovery-subcontent"
@@ -97,13 +149,20 @@
             </div>
 
 
+
+            <!-- EXTERNAL -->
+
             <button
                 class="recovery-subheader external-trigger"
-                onclick="toggleSection('external')"
+                onclick="toggleSection('external', 'externalArrow')"
             >
+
                 <span>EXTERNAL</span>
-                <span>+</span>
+
+                <span id="externalArrow">+</span>
+
             </button>
+
 
             <div
                 class="recovery-subcontent"
@@ -133,108 +192,230 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- 4X -->
+
+    <!-- =====================================================
+         4X
+    ====================================================== -->
 
     <section class="recovery-section">
+
 
         <div class="recovery-section-title">
             4X
         </div>
 
 
-        <!-- ACCOUNTABILITY -->
+
+        <!-- 1. ACCOUNTABILITY -->
 
         <div class="recovery-subsection">
 
-            <h2>1. ACCOUNTABILITY PARTNERS</h2>
+            <h2>
+                1. ACCOUNTABILITY PARTNERS
+            </h2>
 
             <div class="recovery-input-list">
 
-                <input class="recovery-input" type="text" placeholder="1.">
-                <input class="recovery-input" type="text" placeholder="2.">
-                <input class="recovery-input" type="text" placeholder="3.">
-                <input class="recovery-input" type="text" placeholder="4.">
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="1."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="2."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="3."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="4."
+                >
 
             </div>
 
         </div>
 
 
-        <!-- MOTIVATION -->
+
+        <!-- 2. MOTIVATION -->
 
         <div class="recovery-subsection">
 
-            <h2>2. FOUR REASONS WHY</h2>
+            <h2>
+                2. FOUR REASONS WHY
+            </h2>
 
             <p class="recovery-help-text">
-                My reasons for changing this behaviour:
+                My four main reasons for changing this behaviour:
             </p>
+
 
             <div class="recovery-input-list">
 
-                <input class="recovery-input" type="text" placeholder="1.">
-                <input class="recovery-input" type="text" placeholder="2.">
-                <input class="recovery-input" type="text" placeholder="3.">
-                <input class="recovery-input" type="text" placeholder="4.">
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="1."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="2."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="3."
+                >
+
+                <input
+                    class="recovery-input"
+                    type="text"
+                    placeholder="4."
+                >
 
             </div>
 
         </div>
 
 
-        <!-- CONTINGENCY PLANS -->
+
+        <!-- 3. CONTINGENCY PLANS -->
 
         <div class="recovery-subsection">
 
-            <h2>3. CONTINGENCY PLANS</h2>
+            <h2>
+                3. CONTINGENCY PLANS
+            </h2>
+
 
             <p class="recovery-help-text">
-                Choose a skill to use when an urge hits. Give yourself 14 minutes.
+                Four contingency plans that are positive and enjoyable
+                (even humorous) when craving comes.
             </p>
 
-            <button
-                class="recovery-thermometer-link"
-                onclick="location.href='urge.html'"
-            >
-                OPEN DISTRESS THERMOMETER
-            </button>
+
+            <p class="recovery-help-text">
+                This requires understanding what, where, and when the
+                triggers are.
+            </p>
+
+
+            <p class="recovery-help-text">
+                Refocus attention for 14 minutes on something completely
+                different. Specifically, something positive that engages
+                as many senses as possible (taste, touch, etc.).
+            </p>
+
+
+            <p class="recovery-help-text">
+                For example:
+            </p>
+
+
+            <div class="trigger-item">
+                G.L.A.D
+            </div>
+
+
+            <div class="trigger-item">
+                Take 14 minutes thinking about someone else and a plan
+                of how you might surprise them in a way that would bring
+                a massive smile to their face. That is relative and
+                personal, and should have a real "wow" factor.
+            </div>
+
+
+            <div class="trigger-item">
+                Drop Anchor, 555...444...333...222...111... STOP,
+                TIPP, Urge Surfing, etc.
+            </div>
+
+
+            <div class="trigger-item">
+                My fourth contingency plan:
+            </div>
 
         </div>
 
 
-        <!-- FOUR WEEKS -->
+
+        <!-- 4. FOUR WEEKS -->
 
         <div class="recovery-subsection">
 
-            <h2>4. FOUR WEEKS</h2>
+            <h2>
+                4. FOUR WEEKS
+            </h2>
+
 
             <p class="recovery-four-weeks">
-                Four weeks to form a new habit.
+                Four weeks to start to form a habit
+                (new pathways start to be made while old ones
+                are not reinforced).
+            </p>
+
+
+            <p class="recovery-four-weeks">
+                After the first four weeks, take four new reasons,
+                plans, and more weeks.
             </p>
 
         </div>
 
+
     </section>
+
 
 </main>
 
 
+
 <script>
 
-function toggleSection(id) {
+function toggleSection(sectionId, arrowId) {
 
-    const section = document.getElementById(id);
+    const section =
+        document.getElementById(sectionId);
+
+    const arrow =
+        document.getElementById(arrowId);
+
 
     section.classList.toggle("open");
+
+
+    if (section.classList.contains("open")) {
+
+        arrow.textContent = "−";
+
+    } else {
+
+        arrow.textContent = "+";
+
+    }
 
 }
 
 </script>
+
 
 </body>
 
